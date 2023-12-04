@@ -1,3 +1,5 @@
+import { Container } from "../components/Container/styled";
+
 export const Movies = () => {
- return (<>Movies</>)
-}
+ return <Container></Container>;
+};
