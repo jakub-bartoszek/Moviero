@@ -5,7 +5,7 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
     height: 100vh;
-    overflow: hidden;
+    overflow-x: hidden;
   }
 
   *, ::after, ::before{
@@ -16,16 +16,12 @@ export const GlobalStyle = createGlobalStyle`
   body{
     font-family: 'Poppins', sans-serif;
     height: 100%;
-    overflow: hidden;
     color: black;
     background-color: #00141a;
   }
 
   #root{
     height: 100%;
-    overflow: hidden;
-    display: grid;
-    grid-template-rows: auto 1fr;
   }
 
   ::-webkit-scrollbar {
