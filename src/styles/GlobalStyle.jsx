@@ -3,6 +3,7 @@ import { createGlobalStyle } from "styled-components";
 export const GlobalStyle = createGlobalStyle`
   html{
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
     height: 100vh;
     overflow: hidden;
   }
@@ -17,6 +18,7 @@ export const GlobalStyle = createGlobalStyle`
     height: 100%;
     overflow: hidden;
     color: black;
+    background-color: #00141a;
   }
 
   #root{
