@@ -12,6 +12,8 @@ export const Wrapper = styled.nav`
  height: 72px;
  color: white;
  border-bottom: 2px solid #ffffff30;
+ position: fixed;
+ top: 0;
 `;
 
 export const Container = styled.div`
@@ -24,7 +26,7 @@ export const Container = styled.div`
  display: grid;
  align-items: center;
  justify-content: space-between;
-	gap: 16px;
+ gap: 16px;
  grid-template-columns: min-content auto minmax(auto, 33%);
 `;
 
