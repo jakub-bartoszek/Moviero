@@ -24,15 +24,21 @@ export const GlobalStyle = createGlobalStyle`
     height: 100%;
   }
 
-  ::-webkit-scrollbar {
-  }
+  &::-webkit-scrollbar {
+  height: 10px;
+  width: 10px;
+ }
 
-  ::-webkit-scrollbar-track {
-  }
+ &::-webkit-scrollbar-track {
+  background: transparent;
+ }
 
-  ::-webkit-scrollbar-thumb {
-  }
+ &::-webkit-scrollbar-thumb {
+  background: #ffffff50;
+  border-radius: 50px;
+ }
 
-  ::-webkit-scrollbar-thumb:hover {
-  }  
+ &::-webkit-scrollbar-thumb:hover {
+  background: #ffffff90;
+ }
 `;
