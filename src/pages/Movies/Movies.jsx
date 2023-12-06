@@ -76,11 +76,6 @@ export const Movies = () => {
   }
  }, [cancel, currentMovie, dispatch]);
 
- useEffect(() => {
-  if (similarMovies.length > 0) {
-  }
- }, [dispatch, similarMovies]);
-
  return (
   <Container>
    {currentMovie && (
@@ -111,6 +106,7 @@ export const Movies = () => {
      <SimilarMovies>
       {similarMovies.map((movie) => (
        <PosterWrapper
+        $current={movie.id === currentMovie.id}
         key={nanoid()}
         onClick={(e) => {
          handleClickScroll(e);
