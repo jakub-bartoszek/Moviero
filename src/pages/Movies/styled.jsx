@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { ReactComponent as Star } from "../../assets/icons/star.svg";
 
 export const Banner = styled.div`
@@ -160,6 +160,12 @@ export const PosterWrapper = styled.li`
  transition: all 0.3s;
  border-radius: 6px;
  transform-origin: bottom center;
+
+ ${({ $current }) =>
+  $current &&
+  css`
+   scale: 105%;
+  `}
 
  &:hover {
   scale: 105%;
