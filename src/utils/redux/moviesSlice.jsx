@@ -3,16 +3,21 @@ import { createSlice } from "@reduxjs/toolkit";
 const moviesSlice = createSlice({
  name: "movies",
  initialState: {
+  status: "loading",
   popularMovies: [],
   randomPopularMovie: {},
   similarMovies: [],
   movieDetails: [],
-  genres: []
+  genres: [],
+  totalPages: 1
  },
  reducers: {
   fetchPopularMovies: () => {},
   fetchSimilarMovies: () => {},
   fetchMovieDetails: () => {},
+  setStatus: (state, { payload }) => {
+   state.status = payload;
+  },
   setPopularMovies: (state, { payload }) => {
    state.popularMovies = payload;
   },
@@ -27,6 +32,13 @@ const moviesSlice = createSlice({
   },
   setGenres: (state, { payload }) => {
    state.genres = payload;
+  },
+  setTotalPages: (state, { payload }) => {
+   if (payload > 500) {
+    state.totalPages = 500;
+   } else {
+    state.totalPages = payload;
+   }
   }
  }
 });
@@ -39,7 +51,9 @@ export const {
  setPopularMovies,
  setSimilarMovies,
  setMovieDetails,
- setGenres
+ setGenres,
+ setTotalPages,
+ setStatus
 } = moviesSlice.actions;
 
 export const selectPopularMovies = (state) => state.movies.popularMovies;
@@ -48,5 +62,7 @@ export const selectRandomPopularMovie = (state) =>
 export const selectSimilarMovies = (state) => state.movies.similarMovies;
 export const selectMovieDetails = (state) => state.movies.movieDetails;
 export const selectGenres = (state) => state.movies.genres;
+export const selectTotalPages = (state) => state.movies.totalPages;
+export const selectStatus = (state) => state.movies.status;
 
 export default moviesSlice.reducer;
