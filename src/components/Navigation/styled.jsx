@@ -6,7 +6,7 @@ export const Wrapper = styled.nav`
  background: rgb(0, 34, 44);
  background: linear-gradient(
   0deg,
-  rgba(0, 34, 44, 0.4013921113689095) 0%,
+  rgba(0, 34, 44, 0.5) 0%,
   rgba(0, 34, 44, 1) 100%
  );
  height: 72px;
@@ -14,6 +14,8 @@ export const Wrapper = styled.nav`
  border-bottom: 2px solid #ffffff30;
  position: fixed;
  top: 0;
+ z-index: 2;
+ backdrop-filter: blur(2px);
 `;
 
 export const Container = styled.div`
