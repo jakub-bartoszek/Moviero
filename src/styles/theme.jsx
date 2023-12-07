@@ -6,7 +6,7 @@ const colorNames = {
 export const theme = {
  breakpoints: {
    xs: "400px",
-   s: "600px",
+   s: "650px",
    m: "900px",
    l: "1100px",
    xl: "1400px",
