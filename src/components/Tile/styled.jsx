@@ -11,6 +11,15 @@ export const Wrapper = styled.li`
  transition: all 0.3s;
  cursor: pointer;
 
+ @media (max-width: ${({theme}) => theme.breakpoints.m}) {
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr;
+ }
+
+ @media (max-width: ${({theme}) => theme.breakpoints.m}) {
+  grid-template-columns: 40% 60%;
+ }
+
  &:hover {
   scale: 102%;
   box-shadow: 0 50px 50px 0 #00000080;
@@ -36,8 +45,11 @@ export const Content = styled.div`
  justify-content: space-between;
  padding: 8px;
  gap: 8px;
- font-size: 20px;
  height: 100%;
+
+ @media (max-width: ${({theme}) => theme.breakpoints.l}) {
+ gap: 6px;
+ }
 `;
 
 export const Info = styled.div`
@@ -46,10 +58,24 @@ export const Info = styled.div`
  gap: 8px;
 `;
 
-export const Title = styled.div``;
+export const Title = styled.div`
+font-size: 20px;
+
+@media (max-width: ${({theme}) => theme.breakpoints.l}) {
+ font-size: 18px;
+ }
+
+ @media (max-width: ${({theme}) => theme.breakpoints.m}) {
+  font-size: 16px;
+ }
+`;
 
 export const Year = styled.div`
  color: grey;
+
+ @media (max-width: ${({theme}) => theme.breakpoints.m}) {
+  font-size: 14px;
+ }
 `;
 
 export const Genres = styled.ul`
@@ -58,6 +84,10 @@ export const Genres = styled.ul`
  display: flex;
  flex-wrap: wrap;
  gap: 8px;
+
+ @media (max-width: ${({theme}) => theme.breakpoints.l}) {
+  gap: 6px;
+ }
 `;
 
 export const Genre = styled.li`
@@ -65,6 +95,10 @@ export const Genre = styled.li`
  padding: 6px;
  font-size: 14px;
  border-radius: 5px;
+
+ @media (max-width: ${({theme}) => theme.breakpoints.m}) {
+  font-size: 12px;
+ }
 `;
 
 export const Rating = styled.div`
@@ -73,6 +107,10 @@ export const Rating = styled.div`
  align-items: center;
  column-gap: 8px;
  font-size: 16px;
+
+ @media (max-width: ${({theme}) => theme.breakpoints.l}) {
+  font-size: 14px;
+ }
 `;
 
 export const Rate = styled.div``;
@@ -87,4 +125,8 @@ export const Votes = styled.div`
 export const StarIcon = styled(Star)`
  height: 16px;
  color: yellow;
+
+ @media (max-width: ${({theme}) => theme.breakpoints.l}) {
+  height: 14px;
+ }
 `;
