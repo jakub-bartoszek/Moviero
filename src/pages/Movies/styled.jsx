@@ -5,10 +5,10 @@ export const Banner = styled.div`
  box-shadow: inset 0px 0px 80px 100px #00141a, inset 0px 0px 50px 50px #00141a;
  width: 100%;
  height: 100vw;
- max-height: 600px;
+ max-height: 570px;
  background-image: ${({ $bgImage }) => `url(${$bgImage})`};
  background-size: cover;
- background-position: center;
+ background-position: top;
  color: white;
 `;
 
@@ -134,13 +134,13 @@ export const Description = styled.p`
 export const SimilarMoviesWrapper = styled.section`
  max-height: 300px;
  height: 55vw;
- margin-top: 12px;
+ display: grid;
 `;
 
 export const SectionHeader = styled.h2`
  color: white;
  margin: 0;
- padding: 0;
+ padding: 12px 0;
 `;
 
 export const SimilarMovies = styled.ul`
@@ -152,7 +152,6 @@ export const SimilarMovies = styled.ul`
  align-items: center;
  position: relative;
  scroll-behavior: smooth;
- height: 100%;
 `;
 
 export const PosterWrapper = styled.li`
@@ -160,6 +159,7 @@ export const PosterWrapper = styled.li`
  transition: all 0.3s;
  border-radius: 6px;
  transform-origin: bottom center;
+ cursor: pointer;
 
  ${({ $current }) =>
   $current &&
@@ -183,4 +183,16 @@ export const PosterWrapper = styled.li`
 export const Poster = styled.img`
  height: 100%;
  border-radius: inherit;
+`;
+
+export const PopularMoviesWrapper = styled.div`
+ width: 100%;
+`;
+
+export const PopularMovies = styled.ul`
+ display: grid;
+ grid-template-columns: repeat(5, minmax(120px, 1fr));
+ gap: 16px;
+ list-style: none;
+ padding: 0;
 `;
