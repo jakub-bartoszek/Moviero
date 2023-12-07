@@ -4,8 +4,6 @@ export const GlobalStyle = createGlobalStyle`
   html{
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-    height: 100vh;
-    overflow-x: hidden;
   }
 
   *, ::after, ::before{
@@ -15,13 +13,9 @@ export const GlobalStyle = createGlobalStyle`
 
   body{
     font-family: 'Poppins', sans-serif;
-    height: 100%;
     color: black;
     background-color: #00141a;
-  }
 
-  #root{
-    height: 100%;
   }
 
   &::-webkit-scrollbar {
