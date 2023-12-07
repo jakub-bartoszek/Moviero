@@ -149,7 +149,7 @@ export const Description = styled.p`
 
 export const SimilarMoviesWrapper = styled.section`
  max-height: 300px;
- height: 55vw;
+ height: 70vw;
  width: 100%;
  display: grid;
  grid-template-rows: auto 1fr;
