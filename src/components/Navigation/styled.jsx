@@ -21,7 +21,6 @@ export const Wrapper = styled.nav`
 export const Container = styled.div`
  height: 100%;
  margin: 0 auto;
- height: 100%;
  max-width: 1400px;
  padding: 0 16px;
  color: white;
