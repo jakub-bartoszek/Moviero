@@ -10,6 +10,26 @@ export const Banner = styled.div`
  background-size: cover;
  background-position: top;
  color: white;
+ border: 1px solid #00141a;
+
+ animation: loading 1s ease-in;
+ @keyframes loading {
+  0% {
+   opacity: 0%;
+  }
+  100% {
+   opacity: 100%;
+  }
+ }
+
+ @media (max-width: ${({ theme }) => theme.breakpoints.m}) {
+  box-shadow: inset 0px 0px 60px 80px #00141a;
+ }
+
+ @media (max-width: ${({ theme }) => theme.breakpoints.s}) {
+  gap: 8px;
+  box-shadow: inset 0px 0px 30px 50px #00141a;
+ }
 `;
 
 export const MovieDetails = styled.div`
@@ -19,10 +39,6 @@ export const MovieDetails = styled.div`
  flex-direction: column;
  gap: 16px;
  height: 100%;
-
- @media (max-width: ${({ theme }) => theme.breakpoints.s}) {
-  gap: 8px;
- }
 `;
 
 export const Title = styled.h1`
@@ -134,11 +150,14 @@ export const Description = styled.p`
 export const SimilarMoviesWrapper = styled.section`
  max-height: 300px;
  height: 55vw;
+ width: 100%;
  display: grid;
+ grid-template-rows: auto 1fr;
 `;
 
 export const SectionHeader = styled.h2`
  color: white;
+ width: 100%;
  margin: 0;
  padding: 12px 0;
 `;
@@ -148,10 +167,12 @@ export const SimilarMovies = styled.ul`
  display: flex;
  padding: 8px 0;
  gap: 16px;
- overflow-y: hidden;
+ height: 100%;
+ width: 100%;
  align-items: center;
  position: relative;
  scroll-behavior: smooth;
+ overflow-x: scroll;
 `;
 
 export const PosterWrapper = styled.li`
@@ -165,10 +186,16 @@ export const PosterWrapper = styled.li`
   $current &&
   css`
    scale: 105%;
+   box-shadow: 0 0 50px 30px #00141a;
+   z-index: 1;
+   filter: brightness(110%);
   `}
 
- &:hover {
+ &:active {
   scale: 105%;
+  box-shadow: 0 0 50px 30px #00141a;
+  z-index: 1;
+  filter: brightness(110%);
  }
 
  &:first-child {
@@ -195,4 +222,16 @@ export const PopularMovies = styled.ul`
  gap: 16px;
  list-style: none;
  padding: 0;
+
+ @media (max-width: ${({ theme }) => theme.breakpoints.l}) {
+  grid-template-columns: repeat(4, minmax(120px, 1fr));
+ }
+
+ @media (max-width: ${({ theme }) => theme.breakpoints.m}) {
+  grid-template-columns: repeat(2, minmax(120px, 1fr));
+ }
+
+ @media (max-width: ${({ theme }) => theme.breakpoints.s}) {
+  grid-template-columns: repeat(1, 100%);
+ }
 `;
