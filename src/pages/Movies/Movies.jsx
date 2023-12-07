@@ -17,6 +17,8 @@ import {
  Genres,
  MovieDetails,
  OutOf,
+ PopularMovies,
+ PopularMoviesWrapper,
  Poster,
  PosterWrapper,
  Rate,
@@ -25,10 +27,11 @@ import {
  SimilarMovies,
  SimilarMoviesWrapper,
  StarIcon,
- Title,
- Votes
+ Votes,
+ Title
 } from "./styled";
 import { nanoid } from "nanoid";
+import { Tile } from "../../components/Tile/Tile";
 
 export const Movies = () => {
  const dispatch = useDispatch();
@@ -45,7 +48,11 @@ export const Movies = () => {
  const handleClickScroll = (e) => {
   const element = e.target;
   if (element) {
-   element.scrollIntoView({ behavior: "smooth", inline: "center" });
+   element.scrollIntoView({
+    behavior: "smooth",
+    inline: "center",
+    block: "end"
+   });
   }
  };
 
@@ -122,6 +129,18 @@ export const Movies = () => {
      </SimilarMovies>
     </SimilarMoviesWrapper>
    )}
+   <PopularMoviesWrapper>
+    <SectionHeader>Popular movies</SectionHeader>
+    <PopularMovies>
+     {popularMovies.map((movie) => (
+      <Tile
+       genres={genres}
+       key={nanoid()}
+       movie={movie}
+      />
+     ))}
+    </PopularMovies>
+   </PopularMoviesWrapper>
   </Container>
  );
 };
