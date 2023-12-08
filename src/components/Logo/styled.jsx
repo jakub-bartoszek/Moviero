@@ -2,7 +2,9 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
  display: flex;
- justify-content: center;
+ padding: 0;
+ margin: 0;
+ justify-content: start;
  align-items: center;
  font-size: 32px;
  font-weight: 700;
