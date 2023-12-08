@@ -28,7 +28,8 @@ export const Container = styled.div`
  align-items: center;
  justify-content: space-between;
  gap: 16px;
- grid-template-columns: min-content auto minmax(auto, 33%);
+ grid-template-columns: 1fr 1fr 1fr;
+ position: relative;
 `;
 
 export const Links = styled.div`
@@ -45,4 +46,5 @@ export const StyledLink = styled(Link)`
  font-weight: 400;
  padding: 16px;
  color: white;
+ white-space: nowrap;
 `;
