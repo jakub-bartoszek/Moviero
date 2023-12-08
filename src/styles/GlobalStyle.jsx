@@ -4,6 +4,7 @@ export const GlobalStyle = createGlobalStyle`
   html{
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+
   }
 
   *, ::after, ::before{
@@ -16,6 +17,10 @@ export const GlobalStyle = createGlobalStyle`
     color: black;
     background-color: #00141a;
 
+  }
+
+  #root {
+    height: 100vh;
   }
 
   &::-webkit-scrollbar {
