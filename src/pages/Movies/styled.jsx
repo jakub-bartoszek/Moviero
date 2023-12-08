@@ -181,6 +181,7 @@ export const PosterWrapper = styled.li`
  border-radius: 6px;
  transform-origin: bottom center;
  cursor: pointer;
+ filter: brightness(80%);
 
  ${({ $current }) =>
   $current &&
@@ -191,10 +192,8 @@ export const PosterWrapper = styled.li`
    filter: brightness(110%);
   `}
 
- &:active {
+ &:hover {
   scale: 105%;
-  box-shadow: 0 0 50px 30px #00141a;
-  z-index: 1;
   filter: brightness(110%);
  }
 
