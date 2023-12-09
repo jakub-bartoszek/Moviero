@@ -19,7 +19,9 @@ export const Tile = ({ movie, genres }) => {
  return (
   <Wrapper>
    <PosterWrapper>
-    <Poster src={`https://image.tmdb.org/t/p/w400/${movie.poster_path}`} />
+    {movie.poster_path && (
+     <Poster src={`https://image.tmdb.org/t/p/w400/${movie.poster_path}`} />
+    )}
    </PosterWrapper>
    <Content>
     <Info>

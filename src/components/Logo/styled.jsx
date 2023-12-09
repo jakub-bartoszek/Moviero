@@ -1,6 +1,7 @@
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
+export const Wrapper = styled(NavLink)`
  display: flex;
  padding: 0;
  margin: 0;
@@ -10,4 +11,5 @@ export const Wrapper = styled.div`
  font-weight: 700;
  color: rgb(0, 255, 255);
  text-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+ text-decoration: none;
 `;

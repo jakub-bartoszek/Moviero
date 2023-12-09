@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const Wrapper = styled.nav`
@@ -39,7 +39,7 @@ export const Links = styled.div`
  align-items: center;
 `;
 
-export const StyledLink = styled(Link)`
+export const StyledNavLink = styled(NavLink)`
  text-decoration: none;
  color: inherit;
  font-size: 16px;

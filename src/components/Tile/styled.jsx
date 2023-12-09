@@ -11,12 +11,12 @@ export const Wrapper = styled.li`
  transition: all 0.3s;
  cursor: pointer;
 
- @media (max-width: ${({theme}) => theme.breakpoints.m}) {
+ @media (max-width: ${({ theme }) => theme.breakpoints.m}) {
   grid-template-rows: 1fr;
   grid-template-columns: 1fr 1fr;
  }
 
- @media (max-width: ${({theme}) => theme.breakpoints.m}) {
+ @media (max-width: ${({ theme }) => theme.breakpoints.m}) {
   grid-template-columns: 40% 60%;
  }
 
@@ -31,6 +31,10 @@ export const PosterWrapper = styled.div`
  width: 100%;
  aspect-ratio: 6/9;
  display: flex;
+ justify-content: center;
+ align-items: center;
+ background-color: black;
+ border-radius: 5px 5px 0 0;
 `;
 
 export const Poster = styled.img`
@@ -47,8 +51,8 @@ export const Content = styled.div`
  gap: 8px;
  height: 100%;
 
- @media (max-width: ${({theme}) => theme.breakpoints.l}) {
- gap: 6px;
+ @media (max-width: ${({ theme }) => theme.breakpoints.l}) {
+  gap: 6px;
  }
 `;
 
@@ -59,13 +63,13 @@ export const Info = styled.div`
 `;
 
 export const Title = styled.div`
-font-size: 20px;
+ font-size: 20px;
 
-@media (max-width: ${({theme}) => theme.breakpoints.l}) {
- font-size: 18px;
+ @media (max-width: ${({ theme }) => theme.breakpoints.l}) {
+  font-size: 18px;
  }
 
- @media (max-width: ${({theme}) => theme.breakpoints.m}) {
+ @media (max-width: ${({ theme }) => theme.breakpoints.m}) {
   font-size: 16px;
  }
 `;
@@ -73,7 +77,7 @@ font-size: 20px;
 export const Year = styled.div`
  color: grey;
 
- @media (max-width: ${({theme}) => theme.breakpoints.m}) {
+ @media (max-width: ${({ theme }) => theme.breakpoints.m}) {
   font-size: 14px;
  }
 `;
@@ -85,7 +89,7 @@ export const Genres = styled.ul`
  flex-wrap: wrap;
  gap: 8px;
 
- @media (max-width: ${({theme}) => theme.breakpoints.l}) {
+ @media (max-width: ${({ theme }) => theme.breakpoints.l}) {
   gap: 6px;
  }
 `;
@@ -96,7 +100,7 @@ export const Genre = styled.li`
  font-size: 14px;
  border-radius: 5px;
 
- @media (max-width: ${({theme}) => theme.breakpoints.m}) {
+ @media (max-width: ${({ theme }) => theme.breakpoints.m}) {
   font-size: 12px;
  }
 `;
@@ -108,7 +112,7 @@ export const Rating = styled.div`
  column-gap: 8px;
  font-size: 16px;
 
- @media (max-width: ${({theme}) => theme.breakpoints.l}) {
+ @media (max-width: ${({ theme }) => theme.breakpoints.l}) {
   font-size: 14px;
  }
 `;
@@ -126,7 +130,7 @@ export const StarIcon = styled(Star)`
  height: 16px;
  color: yellow;
 
- @media (max-width: ${({theme}) => theme.breakpoints.l}) {
+ @media (max-width: ${({ theme }) => theme.breakpoints.l}) {
   height: 14px;
  }
 `;

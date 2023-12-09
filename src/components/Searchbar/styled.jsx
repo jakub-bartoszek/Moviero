@@ -11,7 +11,7 @@ export const Container = styled.div`
 `;
 
 export const Wrapper = styled.form`
-  width: ${({ isExpanded }) => (isExpanded ? '100%' : '36px')};
+  width: ${({ $isExpanded }) => ($isExpanded ? '100%' : '36px')};
   height: 36px;
   transition: all 0.3s;
   display: grid;

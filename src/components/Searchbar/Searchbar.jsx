@@ -33,7 +33,9 @@ export const Searchbar = () => {
  const dispatch = useDispatch();
 
  useEffect(() => {
-  dispatch(fetchSearchbarResults({ searchQuery: searchQuery, page: 1 }));
+  if (searchQuery !== "") {
+   dispatch(fetchSearchbarResults({ searchQuery: searchQuery, page: 1 }));
+  }
  }, [dispatch, searchQuery]);
 
  const handleSearchIconClick = () => {
@@ -61,10 +63,11 @@ export const Searchbar = () => {
    <Wrapper
     onSubmit={() => {
      searchParams.set("search", searchQuery);
+     searchParams.set("page", 1);
      setSearchParams(searchParams);
     }}
     ref={wrapperRef}
-    isExpanded={isExpanded}
+    $isExpanded={isExpanded}
    >
     <SearchIconWrapper onClick={handleSearchIconClick}>
      <SearchIcon />
