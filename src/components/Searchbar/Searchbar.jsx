@@ -33,7 +33,7 @@ export const Searchbar = () => {
  const dispatch = useDispatch();
 
  useEffect(() => {
-  dispatch(fetchSearchbarResults({ searchQuery: searchQuery }));
+  dispatch(fetchSearchbarResults({ searchQuery: searchQuery, page: 1 }));
  }, [dispatch, searchQuery]);
 
  const handleSearchIconClick = () => {
