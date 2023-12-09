@@ -59,6 +59,10 @@ export const Searchbar = () => {
  return (
   <Container>
    <Wrapper
+    onSubmit={() => {
+     searchParams.set("search", searchQuery);
+     setSearchParams(searchParams);
+    }}
     ref={wrapperRef}
     isExpanded={isExpanded}
    >
