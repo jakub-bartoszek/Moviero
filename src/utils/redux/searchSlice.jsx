@@ -4,16 +4,16 @@ const searchSlice = createSlice({
  name: "search",
  initialState: {
   searchQuery: "",
-  searchResults: [],
+  searchbarResults: [],
   searchStatus: "loading"
  },
  reducers: {
-  fetchSearchResults: () => {},
+  fetchSearchbarResults: () => {},
   setSearchQuery: (state, { payload }) => {
    state.searchQuery = payload;
   },
-  setSearchResults: (state, { payload }) => {
-   state.searchResults = payload;
+  setSearchbarResults: (state, { payload }) => {
+   state.searchbarResults = payload;
   },
   setSearchStatus: (state, { payload }) => {
    state.searchStatus = payload;
@@ -23,13 +23,13 @@ const searchSlice = createSlice({
 
 export const {
  setSearchQuery,
- fetchSearchResults,
- setSearchResults,
+ fetchSearchbarResults,
+ setSearchbarResults,
  setSearchStatus
 } = searchSlice.actions;
 
 export const selectSearchQuery = (state) => state.search.searchQuery;
-export const selectSearchResults = (state) => state.search.searchResults;
+export const selectSearchbarResults = (state) => state.search.searchbarResults;
 export const selectSearchStatus = (state) => state.search.searchStatus;
 
 export default searchSlice.reducer;

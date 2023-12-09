@@ -4,7 +4,7 @@ import { getPopularMovies } from "./getPopularMovies";
 import { getGenres } from "./getGenres";
 import { getSimilarMovies } from "./getSimilarMovies";
 import { getMoviesDetails } from "./getMovieDetails";
-import { fetchSearchResults, setSearchResults, setSearchStatus } from "../../redux/searchSlice";
+import { fetchSearchbarResults, setSearchbarResults, setSearchStatus } from "../../redux/searchSlice";
 import { getSearchResults } from "./getSearchResults";
 
 function* fetchPopularMoviesHandler({ payload }) {
@@ -48,11 +48,11 @@ function* fetchMovieDetailsHandler({ payload }) {
 }
 
 
-function* fetchSearchResultsHandler({ payload }) {
+function* fetchSearchbarResultsHandler({ payload }) {
  try {
   yield put(setSearchStatus("loading"));
-  const searchResults = yield call(getSearchResults, payload.searchQuery);
-  yield put(setSearchResults(searchResults));
+  const searchbarResults = yield call(getSearchResults, payload.searchQuery);
+  yield put(setSearchbarResults(searchbarResults));
   yield delay(200);
   yield put(setSearchStatus("success"));
  }
@@ -65,5 +65,5 @@ export function* moviesSaga() {
  yield takeLatest(fetchPopularMovies.type, fetchPopularMoviesHandler);
  yield takeLatest(fetchSimilarMovies.type, fetchSimilarMoviesHandler);
  yield takeLatest(fetchMovieDetails.type, fetchMovieDetailsHandler);
- yield takeLatest(fetchSearchResults.type, fetchSearchResultsHandler);
+ yield takeLatest(fetchSearchbarResults.type, fetchSearchbarResultsHandler);
 }
