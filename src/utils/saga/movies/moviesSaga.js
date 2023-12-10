@@ -3,7 +3,7 @@ import { fetchMovieDetails, fetchPopularMovies, fetchSearchResults, fetchSimilar
 import { getPopularMovies } from "./getPopularMovies";
 import { getGenres } from "./getGenres";
 import { getSimilarMovies } from "./getSimilarMovies";
-import { getMoviesDetails } from "./getMovieDetails";
+import { getMovieDetails } from "./getMovieDetails";
 import { fetchSearchbarResults, setSearchbarResults, setSearchStatus } from "../../redux/searchSlice";
 import { getSearchResults } from "./getSearchResults";
 
@@ -38,7 +38,7 @@ function* fetchSimilarMoviesHandler({ payload }) {
 function* fetchMovieDetailsHandler({ payload }) {
  try {
   yield put(setStatus("loading"));
-  const movieDetails = yield call(getMoviesDetails, payload.movieId);
+  const movieDetails = yield call(getMovieDetails, payload.movieId);
   yield put(setMovieDetails(movieDetails));
  }
  catch (error) {

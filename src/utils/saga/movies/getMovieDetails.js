@@ -1,7 +1,7 @@
 
 import axios from "axios";
 
-export const getMoviesDetails = async (movieId) => {
+export const getMovieDetails = async (movieId) => {
  const response = await axios.get(`https://api.themoviedb.org/3/movie/${movieId}?language=en-US`, {
   headers: {
    accept: 'application/json',

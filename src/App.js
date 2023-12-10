@@ -1,6 +1,6 @@
 import { HashRouter, Navigate, Route, Routes } from "react-router-dom";
 import { Movies } from "./pages/Movies/Movies";
-import { Movie } from "./pages/Movie";
+import { Movie } from "./pages/Movie/Movie";
 import { People } from "./pages/People";
 import { Person } from "./pages/Person";
 import { toMovie, toMovies, toPeople, toPerson } from "./routes";
