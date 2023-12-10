@@ -9,15 +9,18 @@ import {
  Rate,
  Rating,
  StarIcon,
+ StyledLink,
  Title,
  Votes,
  Wrapper,
  Year
 } from "./styled";
+import { toMovie } from "../../routes";
 
 export const Tile = ({ movie, genres }) => {
  return (
   <Wrapper>
+    <StyledLink to={toMovie({ id: movie.id })}>
    <PosterWrapper>
     {movie.poster_path && (
      <Poster src={`https://image.tmdb.org/t/p/w400/${movie.poster_path}`} />
@@ -41,6 +44,7 @@ export const Tile = ({ movie, genres }) => {
      <Votes>{movie.vote_count}</Votes>
     </Rating>
    </Content>
+   </StyledLink>
   </Wrapper>
  );
 };

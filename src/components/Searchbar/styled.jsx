@@ -70,6 +70,12 @@ export const ResultList = styled.ul`
   ${Wrapper}:focus-within & {
     transform: scale(1, 1);
   }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.xs}) {
+    width: 100vw;
+    right: -16px;
+    max-height: 50vh;
+ }
 `;
 
 export const ResultStatus = styled.li`

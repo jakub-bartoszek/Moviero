@@ -1,7 +1,14 @@
 import styled from "styled-components";
 import { ReactComponent as Star } from "../../assets/icons/star.svg";
+import { Link } from "react-router-dom";
+
+
 
 export const Wrapper = styled.li`
+
+`;
+
+export const StyledLink = styled(Link)`
  display: grid;
  grid-template-rows: auto 1fr;
  color: white;
@@ -10,6 +17,8 @@ export const Wrapper = styled.li`
  border-radius: 5px;
  transition: all 0.3s;
  cursor: pointer;
+ height: 100%;
+ text-decoration: none;
 
  @media (max-width: ${({ theme }) => theme.breakpoints.m}) {
   grid-template-rows: 1fr;
@@ -25,7 +34,7 @@ export const Wrapper = styled.li`
   box-shadow: 0 10px 50px 0 #00000080;
   z-index: 1;
  }
-`;
+`
 
 export const PosterWrapper = styled.div`
  width: 100%;

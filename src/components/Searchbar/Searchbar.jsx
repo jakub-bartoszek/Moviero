@@ -61,7 +61,8 @@ export const Searchbar = () => {
  return (
   <Container>
    <Wrapper
-    onSubmit={() => {
+    onSubmit={(e) => {
+     e.preventDefault();
      searchParams.set("search", searchQuery);
      searchParams.set("page", 1);
      setSearchParams(searchParams);
