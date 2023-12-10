@@ -28,7 +28,7 @@ export const Movie = () => {
  const dispatch = useDispatch();
  const movie = useSelector(selectMovie);
  const status = useSelector(selectStatus);
- const genres = movie.genres.map((genre) => Object.values(genre)[1]);
+ const genres = movie?.genres?.map((genre) => Object.values(genre)[1]);
 
  useEffect(() => {
   dispatch(fetchMovie({ movieId: id }));
