@@ -123,7 +123,7 @@ export const PopularMovies = () => {
           <Rating>
            <StarIcon />
            <Rate>
-            {currentMovie?.vote_average}/<OutOf>10</OutOf>
+            {currentMovie?.vote_average.toFixed(1)}/<OutOf>10</OutOf>
             <Votes>&nbsp;{currentMovie?.vote_count} votes</Votes>
            </Rate>
           </Rating>
