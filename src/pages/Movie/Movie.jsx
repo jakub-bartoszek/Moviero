@@ -49,18 +49,18 @@ export const Movie = () => {
         <MovieDetails>
          <Title>{movie.title}</Title>
          <Genres>
-          {genres.map((genre) => (
+          {genres?.map((genre) => (
            <Genre key={nanoid()}>{genre}</Genre>
           ))}
          </Genres>
          <Rating>
           <StarIcon />
           <Rate>
-           {movie?.vote_average}/<OutOf>10</OutOf>
-           <Votes>&nbsp;{movie?.vote_count} votes</Votes>
+           {movie.vote_average}/<OutOf>10</OutOf>
+           <Votes>&nbsp;{movie.vote_count} votes</Votes>
           </Rate>
          </Rating>
-         <Description>{movie?.overview}</Description>
+         <Description>{movie.overview}</Description>
         </MovieDetails>
        </Banner>
       </Container>
