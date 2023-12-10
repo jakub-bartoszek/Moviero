@@ -97,24 +97,6 @@ export const MenuLogo = styled.div`
  text-decoration: none;
 `;
 
-export const Sidebar = styled.div`
- position: absolute;
- display: flex;
- top: 0;
- left: ${({ $isShowed }) => ($isShowed ? "0vw" : "-70vw")};
- height: 100vh;
- width: 70vw;
- background-color: #00222c;
- padding: 20px 16px;
- display: flex;
- flex-direction: column;
- transition: all 0.3s;
- gap: 24px;
- box-shadow: ${({ $isShowed }) =>
-  $isShowed ? "0 0 150px 50px black" : "none"};
- z-index: 3;
-`;
-
 export const SidebarNavLink = styled(NavLink)`
  text-decoration: none;
  color: inherit;
@@ -123,4 +105,31 @@ export const SidebarNavLink = styled(NavLink)`
  color: white;
  white-space: nowrap;
  width: 100%;
+`;
+
+export const SidebarWrapper = styled.div`
+ position: absolute;
+ display: flex;
+ top: 0;
+ left: ${({ $isShowed }) => ($isShowed ? "0vw" : "-100vw")};
+ height: 100vh;
+ width: 100vw;
+ display: flex;
+ z-index: 3;
+
+ transition: all 0.5s;
+`;
+
+export const Sidebar = styled.div`
+ width: 70%;
+ display: flex;
+ flex-direction: column;
+ padding: 20px 16px;
+ gap: 16px;
+ background-color: #00222c;
+ box-shadow: 0 0 80px 30px black;
+`;
+
+export const SidebarBackground = styled.div`
+ width: 30%;
 `;

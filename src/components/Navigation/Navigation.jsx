@@ -8,7 +8,9 @@ import {
  MenuHeader,
  MenuLogo,
  Sidebar,
+ SidebarBackground,
  SidebarNavLink,
+ SidebarWrapper,
  StyledNavLink,
  Wrapper
 } from "./styled";
@@ -23,6 +25,7 @@ export const Navigation = () => {
  const handleOutsideClick = (e) => {
   if (sidebarRef.current && !sidebarRef.current.contains(e.target)) {
    setIsShowed(false);
+   e.stopPropagation(); // Stop the event propagation
   }
  };
 
@@ -37,19 +40,22 @@ export const Navigation = () => {
  const sidebarRef = useRef(null);
  return (
   <Wrapper>
-   <Sidebar
+   <SidebarWrapper
     $isShowed={isShowed}
     ref={sidebarRef}
    >
-    <MenuHeader>
-     <MenuButton onClick={handleButtonClick} />
-     <MenuLogo to="/people">Moviero</MenuLogo>
-    </MenuHeader>
+    <Sidebar>
+     <MenuHeader>
+      <MenuButton onClick={handleButtonClick} />
+      <MenuLogo to="/people">Moviero</MenuLogo>
+     </MenuHeader>
 
-    <SidebarNavLink to="/movies">Movies</SidebarNavLink>
-    <SidebarNavLink to="/people">People</SidebarNavLink>
-    <SidebarNavLink to="/tvshows">TV Shows</SidebarNavLink>
-   </Sidebar>
+     <SidebarNavLink to="/movies">Movies</SidebarNavLink>
+     <SidebarNavLink to="/people">People</SidebarNavLink>
+     <SidebarNavLink to="/tvshows">TV Shows</SidebarNavLink>
+    </Sidebar>
+    <SidebarBackground onClick={() => setIsShowed(false)} />
+   </SidebarWrapper>
    <Container>
     <MenuButton onClick={handleButtonClick} />
     <Logo />
