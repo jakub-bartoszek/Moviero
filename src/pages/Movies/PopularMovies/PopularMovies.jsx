@@ -107,7 +107,7 @@ export const PopularMovies = () => {
      error: <>Error</>,
      loading: <Loader />,
      success: (
-      <Container containerRef={containerRef}>
+      <Container ref={containerRef}>
        {currentMovie && (
         <Banner
          key={currentMovie.id}
