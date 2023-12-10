@@ -39,7 +39,7 @@ export const Searchbar = () => {
  }, [dispatch, searchQuery]);
 
  const handleSearchIconClick = () => {
-  setIsExpanded(true);
+  setIsExpanded(!isExpanded);
   inputRef.current.focus();
  };
 
