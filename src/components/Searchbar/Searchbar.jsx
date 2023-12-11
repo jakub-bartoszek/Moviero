@@ -22,33 +22,15 @@ import { Loader } from "../Loader/Loader";
 import { useSearchParams } from "react-router-dom";
 
 export const Searchbar = () => {
- const inputRef = useRef(null);
- const wrapperRef = useRef(null);
- const [isExpanded, setIsExpanded] = useState(false);
  const searchQuery = useSelector(selectSearchQuery);
  const searchbarResults = useSelector(selectSearchbarResults);
  const status = useSelector(selectSearchStatus);
+ const [isExpanded, setIsExpanded] = useState(false);
  const [searchParams, setSearchParams] = useSearchParams();
+ const inputRef = useRef(null);
+ const wrapperRef = useRef(null);
 
  const dispatch = useDispatch();
-
- useEffect(() => {
-  if (searchQuery !== "") {
-   dispatch(fetchSearchbarResults({ searchQuery: searchQuery, page: 1 }));
-  }
- }, [dispatch, searchQuery]);
-
- const handleSearchIconClick = () => {
-  setIsExpanded(!isExpanded);
-  inputRef.current.focus();
- };
-
- const handleOutsideClick = (e) => {
-  if (wrapperRef.current && !wrapperRef.current.contains(e.target)) {
-   setIsExpanded(false);
-   dispatch(setSearchQuery(""));
-  }
- };
 
  useEffect(() => {
   document.addEventListener("mousedown", handleOutsideClick);
@@ -58,19 +40,40 @@ export const Searchbar = () => {
   };
  }, []);
 
+ useEffect(() => {
+  if (searchQuery !== "") {
+   dispatch(fetchSearchbarResults({ searchQuery: searchQuery, page: 1 }));
+  }
+ }, [dispatch, searchQuery]);
+
+ const handleOutsideClick = (e) => {
+  if (wrapperRef.current && !wrapperRef.current.contains(e.target)) {
+   setIsExpanded(false);
+   dispatch(setSearchQuery(""));
+  }
+ };
+
+ const switchSearchbar = () => {
+  setIsExpanded(!isExpanded);
+  inputRef.current.focus();
+ };
+
+ const onFormSubmit = (e) => {
+  e.preventDefault();
+  searchParams.set("search", searchQuery);
+  searchParams.set("page", 1);
+  setSearchParams(searchParams);
+  switchSearchbar();
+ };
+
  return (
   <Container>
    <Wrapper
-    onSubmit={(e) => {
-     e.preventDefault();
-     searchParams.set("search", searchQuery);
-     searchParams.set("page", 1);
-     setSearchParams(searchParams);
-    }}
+    onSubmit={(e) => onFormSubmit(e)}
     ref={wrapperRef}
     $isExpanded={isExpanded}
    >
-    <SearchIconWrapper onClick={handleSearchIconClick}>
+    <SearchIconWrapper onClick={switchSearchbar}>
      <SearchIcon />
     </SearchIconWrapper>
     <Input
@@ -92,6 +95,7 @@ export const Searchbar = () => {
         {searchbarResults.length ? (
          searchbarResults.map((movie) => (
           <SearchTile
+           switchSearchbar={switchSearchbar}
            key={nanoid()}
            movie={movie}
           />
