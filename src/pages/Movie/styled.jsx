@@ -1,8 +1,6 @@
 import styled, { css } from "styled-components";
 import { ReactComponent as Star } from "../../assets/icons/star.svg";
 
-
-
 export const Banner = styled.div`
  box-shadow: inset 0px 0px 80px 100px #00141a, inset 0px 0px 50px 50px #00141a;
  width: 100%;
@@ -61,6 +59,10 @@ export const Title = styled.h1`
  @media (max-width: ${({ theme }) => theme.breakpoints.xs}) {
   font-size: 24px;
  }
+`;
+
+export const Year = styled.span`
+ color: #afafaf;
 `;
 
 export const Genres = styled.div`
@@ -149,91 +151,36 @@ export const Description = styled.p`
  }
 `;
 
-export const PosterWrapper = styled.li`
- height: 95%;
- transition: all 0.3s;
- border-radius: 6px;
- transform-origin: bottom center;
- cursor: pointer;
- filter: brightness(80%);
-
- ${({ $current }) =>
-  $current &&
-  css`
-   scale: 105%;
-   box-shadow: 0 0 50px 30px #00141a;
-   z-index: 1;
-   filter: brightness(110%);
-  `}
-
- &:hover {
-  scale: 105%;
-  filter: brightness(110%);
- }
-
- &:first-child {
-  transform-origin: bottom left;
- }
-
- &:last-child {
-  transform-origin: bottom right;
- }
-`;
-
-export const Poster = styled.img`
- height: 100%;
- border-radius: inherit;
-`;
-
-export const SimilarMoviesList = styled.ul`
- list-style-type: none;
- display: flex;
- padding: 8px 0;
- gap: 16px;
- height: 100%;
- width: 100%;
- align-items: center;
- position: relative;
- scroll-behavior: smooth;
- overflow-x: scroll;
-`;
-
-export const PopularMoviesList = styled.ul`
+export const Cast = styled.ul`
  display: grid;
- grid-template-columns: repeat(5, minmax(120px, 1fr));
+ grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
  gap: 16px;
  list-style: none;
  padding: 0;
-
- @media (max-width: ${({ theme }) => theme.breakpoints.l}) {
-  grid-template-columns: repeat(4, minmax(120px, 1fr));
- }
-
- @media (max-width: ${({ theme }) => theme.breakpoints.m}) {
-  grid-template-columns: repeat(2, minmax(120px, 1fr));
- }
-
- @media (max-width: ${({ theme }) => theme.breakpoints.s}) {
-  grid-template-columns: repeat(1, 100%);
- }
 `;
 
+export const Crew = styled.ul`
+ display: grid;
+ grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+ gap: 16px;
+ list-style: none;
+ padding: 0;
+`;
+
+export const SectionWrapper = styled.section`
+ width: 100%;
+ padding-bottom: 1px;
+`;
 
 export const SectionHeader = styled.h2`
  color: white;
  width: 100%;
+ font-size: 32px;
  margin: 0;
- padding: 12px 0;
+ padding: 24px 0 12px 0;
 `;
 
-export const HorizontalMoviesWrapper = styled.section`
- max-height: 300px;
- height: 70vw;
- width: 100%;
- display: grid;
- grid-template-rows: auto 1fr;
-`;
-
-export const VerticalMoviesWrapper = styled.section`
- width: 100%;
+export const Tagline = styled.p`
+ font-style: italic;
+ text-shadow: 0 0 5px black, 0 0 5px black, 0 0 5px black, 0 0 5px black;
 `;
