@@ -38,6 +38,7 @@ import {
  SectionHeader,
  VerticalMoviesWrapper
 } from "../styled";
+import { toMovie } from "../../../routes";
 
 export const PopularMovies = () => {
  const dispatch = useDispatch();
@@ -114,7 +115,7 @@ export const PopularMovies = () => {
          $bgImage={`https://image.tmdb.org/t/p/original/${currentMovie.backdrop_path}`}
         >
          <MovieDetails>
-          <Title>{currentMovie.title}</Title>
+          <Title to={toMovie({ id: currentMovie.id })}>{currentMovie.title}</Title>
           <Genres>
            {movieGenres.map((genre) => (
             <Genre key={nanoid()}>{genre.name}</Genre>
