@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import { ReactComponent as Star } from "../../../assets/icons/star.svg";
+import { Link } from "react-router-dom";
 
 export const Container = styled.div`
 `;
@@ -45,7 +46,10 @@ export const MovieDetails = styled.div`
  height: 100%;
 `;
 
-export const Title = styled.h1`
+export const Title = styled(Link)`
+text-decoration: none;
+color: white;
+font-weight: 500;
  font-size: 72px;
  padding: 0;
  margin: 0;
@@ -218,4 +222,16 @@ export const PopularMoviesList = styled.ul`
  @media (max-width: ${({ theme }) => theme.breakpoints.s}) {
   grid-template-columns: repeat(1, 100%);
  }
+`;
+
+export const HorizontalMoviesWrapper = styled.section`
+ max-height: 300px;
+ height: 70vw;
+ width: 100%;
+ display: grid;
+ grid-template-rows: auto 1fr;
+`;
+
+export const VerticalMoviesWrapper = styled.section`
+ width: 100%;
 `;
