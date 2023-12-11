@@ -1,6 +1,7 @@
 import { takeLatest, call, put } from "@redux-saga/core/effects";
-import { fetchMovie, setMovie, setStatus } from "../../redux/movieSlice";
+import { fetchMovie, setMovie, setMovieCredits, setStatus } from "../../redux/movieSlice";
 import { getMovieDetails } from "./getMovieDetails";
+import { getMovieCredits } from "./getMovieCredits";
 
 
 function* fetchMovieHandler({ payload }) {
@@ -8,7 +9,9 @@ function* fetchMovieHandler({ payload }) {
   
   yield put(setStatus("loading"));
   const movie = yield call(getMovieDetails, payload.movieId);
+  const movieCredits = yield call(getMovieCredits, payload.movieId)
   yield put(setMovie(movie));
+  yield put(setMovieCredits(movieCredits));
   yield put(setStatus("success"));
  }
  catch (error) {
