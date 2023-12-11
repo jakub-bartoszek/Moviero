@@ -61,7 +61,7 @@ export const PopularMovies = () => {
    element.scrollIntoView({
     behavior: "smooth",
     inline: "center",
-    block: "nearest"
+    block: "end"
    });
   }
  };
