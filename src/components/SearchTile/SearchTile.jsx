@@ -17,7 +17,10 @@ import {
 export const SearchTile = ({ movie, switchSearchbar }) => {
  return (
   <Wrapper>
-   <StyledLink onClick={() => switchSearchbar()} to={toMovie({ id: movie.id })}>
+   <StyledLink
+    onClick={() => switchSearchbar()}
+    to={toMovie({ id: movie.id })}
+   >
     <PosterWrapper>
      {movie.poster_path && (
       <Poster src={`https://image.tmdb.org/t/p/w400/${movie.poster_path}`} />
