@@ -19,17 +19,17 @@ import { useDispatch, useSelector } from "react-redux";
 import { nanoid } from "nanoid";
 import { SearchTile } from "../SearchTile/SearchTile";
 import { Loader } from "../Loader/Loader";
-import { useSearchParams } from "react-router-dom";
+import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 
 export const Searchbar = () => {
  const searchQuery = useSelector(selectSearchQuery);
  const searchbarResults = useSelector(selectSearchbarResults);
  const status = useSelector(selectSearchStatus);
  const [isExpanded, setIsExpanded] = useState(false);
- const [searchParams, setSearchParams] = useSearchParams();
  const inputRef = useRef(null);
  const wrapperRef = useRef(null);
 
+ const navigate = useNavigate();
  const dispatch = useDispatch();
 
  useEffect(() => {
@@ -59,10 +59,7 @@ export const Searchbar = () => {
  };
 
  const onFormSubmit = (e) => {
-  e.preventDefault();
-  searchParams.set("search", searchQuery);
-  searchParams.set("page", 1);
-  setSearchParams(searchParams);
+  navigate(`/movies?search=${searchQuery}&page=1`);
   switchSearchbar();
  };
 
