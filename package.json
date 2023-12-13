@@ -2,7 +2,7 @@
  "name": "movies-browser-solo",
  "version": "0.1.0",
  "private": true,
- "homepage": "https://jakub-bartoszek.github.io/moviero/",
+ "homepage": "https://jakub-bartoszek.github.io/Moviero/",
  "dependencies": {
   "@reduxjs/toolkit": "^1.9.7",
   "@testing-library/jest-dom": "^5.17.0",
