@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.js": "/Movies-browser-React-solo/static/js/main.3929b109.js",
-    "static/js/787.ddf1c744.chunk.js": "/Movies-browser-React-solo/static/js/787.ddf1c744.chunk.js",
-    "static/media/star.svg": "/Movies-browser-React-solo/static/media/star.83f3f982c3b0fcbd90ea9e91720cb4dd.svg",
-    "index.html": "/Movies-browser-React-solo/index.html",
-    "static/media/search.svg": "/Movies-browser-React-solo/static/media/search.41e12b2e9125b7f2f4e0aa68493c6f32.svg",
-    "static/media/menu.svg": "/Movies-browser-React-solo/static/media/menu.03fa6e3702cb0272e6691582549b5072.svg",
-    "main.3929b109.js.map": "/Movies-browser-React-solo/static/js/main.3929b109.js.map",
-    "787.ddf1c744.chunk.js.map": "/Movies-browser-React-solo/static/js/787.ddf1c744.chunk.js.map"
+    "main.js": "/jakub-bartoszek.github.io/moviero/static/js/main.d08757e6.js",
+    "static/js/787.ddf1c744.chunk.js": "/jakub-bartoszek.github.io/moviero/static/js/787.ddf1c744.chunk.js",
+    "static/media/star.svg": "/jakub-bartoszek.github.io/moviero/static/media/star.83f3f982c3b0fcbd90ea9e91720cb4dd.svg",
+    "index.html": "/jakub-bartoszek.github.io/moviero/index.html",
+    "static/media/search.svg": "/jakub-bartoszek.github.io/moviero/static/media/search.41e12b2e9125b7f2f4e0aa68493c6f32.svg",
+    "static/media/menu.svg": "/jakub-bartoszek.github.io/moviero/static/media/menu.03fa6e3702cb0272e6691582549b5072.svg",
+    "main.d08757e6.js.map": "/jakub-bartoszek.github.io/moviero/static/js/main.d08757e6.js.map",
+    "787.ddf1c744.chunk.js.map": "/jakub-bartoszek.github.io/moviero/static/js/787.ddf1c744.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.3929b109.js"
+    "static/js/main.d08757e6.js"
   ]
 }
