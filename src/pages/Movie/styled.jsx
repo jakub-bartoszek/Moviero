@@ -169,7 +169,7 @@ export const Crew = styled.ul`
 
 export const SectionWrapper = styled.section`
  width: 100%;
- padding-bottom: 1px;
+ padding-bottom: 16px;
 `;
 
 export const SectionHeader = styled.h2`
