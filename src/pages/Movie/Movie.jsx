@@ -40,6 +40,10 @@ export const Movie = () => {
  const genres = movie?.genres?.map((genre) => Object.values(genre)[1]);
 
  useEffect(() => {
+  window.scrollTo(0,0)
+},[])
+
+ useEffect(() => {
   dispatch(fetchMovie({ movieId: id }));
  }, [dispatch, id]);
 

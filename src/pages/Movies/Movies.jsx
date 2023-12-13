@@ -8,6 +8,10 @@ import { SearchedMovies } from "./SearchedMovies/SearchedMovies";
 
 export const Movies = () => {
  const [searchParams, setSearchParams] = useSearchParams();
+ 
+ useEffect(() => {
+  window.scrollTo(0,0)
+},[])
 
  return (
   <Container>
