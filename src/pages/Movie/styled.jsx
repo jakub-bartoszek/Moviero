@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { ReactComponent as Star } from "../../assets/icons/star.svg";
 
 export const Banner = styled.div`

@@ -1,8 +1,6 @@
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import { Container } from "../../components/Container/styled";
 import { useSearchParams } from "react-router-dom";
-import { Pagination } from "../../components/Pagination/Pagination";
-
 import { PopularMovies } from "./PopularMovies/PopularMovies";
 import { SearchedMovies } from "./SearchedMovies/SearchedMovies";
 import { useDispatch } from "react-redux";

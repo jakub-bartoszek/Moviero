@@ -43,7 +43,7 @@ export const PopularPeople = () => {
        <SectionHeader>Popular people</SectionHeader>
        <PopularPeopleList>
         {popularPeople.map((person) => (
-         <PersonTile person={person} />
+         <PersonTile key={nanoid()} person={person} />
         ))}
        </PopularPeopleList>
       </VerticalSection>

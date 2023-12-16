@@ -1,6 +1,4 @@
-import styled, { css } from "styled-components";
-import { ReactComponent as Star } from "../../../assets/icons/star.svg";
-import { Link } from "react-router-dom";
+import styled from "styled-components";
 
 export const Container = styled.div`
  padding-top: 72px;
