@@ -45,6 +45,11 @@ export const Searchbar = () => {
 
  useEffect(() => {
   if (searchQuery !== "") {
+   console.log({
+    searchQuery: searchQuery,
+    page: 1,
+    category: category
+   })
    dispatch(
     fetchSearchbarResults({
      searchQuery: searchQuery,
@@ -68,7 +73,7 @@ export const Searchbar = () => {
  };
 
  const onFormSubmit = (e) => {
-  navigate(`/${category}?search=${searchQuery}&page=1`);
+  navigate(`/${category === "movie" ? "movies" : "people"}?search=${searchQuery}&page=1`);
   switchSearchbar();
  };
 

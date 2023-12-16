@@ -16,11 +16,11 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Poppins', sans-serif;
     color: black;
     background-color: #00141a;
-
+    height: 100vh;
   }
 
   #root {
-    height: 100vh;
+    height: 100%;
   }
 
   &::-webkit-scrollbar {

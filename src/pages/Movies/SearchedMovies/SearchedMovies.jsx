@@ -4,7 +4,8 @@ import {
  selectGenres,
  selectSearchResults,
  selectStatus,
- selectTotalPages
+ selectTotalPages,
+ selectTotalResults
 } from "../../../utils/redux/moviesSlice";
 import { useEffect, useRef } from "react";
 import { useSearchParams } from "react-router-dom";
@@ -15,6 +16,7 @@ import { Loader } from "../../../components/Loader/Loader";
 import { SearchResultsList, Container } from "./styled";
 import { VerticalSection } from "../../../components/VerticalSection/styled";
 import { SectionHeader } from "../../../components/SectionHeader/styled";
+import { selectCategory } from "../../../utils/redux/searchSlice";
 
 export const SearchedMovies = () => {
  const dispatch = useDispatch();
@@ -24,7 +26,8 @@ export const SearchedMovies = () => {
  const [searchParams, setSearchParams] = useSearchParams();
  const containerRef = useRef(null);
  const totalPages = useSelector(selectTotalPages);
-
+ const totalResults = useSelector(selectTotalResults);
+ const category = useSelector(selectCategory);
 
  useEffect(() => {
   searchParams.set("page", 1);
@@ -36,7 +39,8 @@ export const SearchedMovies = () => {
    dispatch(
     fetchSearchResults({
      searchQuery: searchParams.get("search"),
-     page: searchParams.get("page")
+     page: searchParams.get("page"),
+     category: category
     })
    );
   }
@@ -50,9 +54,9 @@ export const SearchedMovies = () => {
       <>
        <VerticalSection>
         <SectionHeader>
-         {`Search results for "${searchParams.get("search")}" (${
-          searchResults.length
-         })`}
+         {`Search results for "${searchParams.get(
+          "search"
+         )}" (${totalResults})`}
         </SectionHeader>
         <SearchResultsList>
          {searchResults.map((movie) => (

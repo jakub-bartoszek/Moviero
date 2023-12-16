@@ -2,6 +2,10 @@ import styled from "styled-components";
 
 export const Container = styled.div`
  padding-top: 72px;
+ min-height: 100%;
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between
 `;
 
 export const SearchResultsList = styled.ul`

@@ -1,5 +1,5 @@
 import { takeLatest, call, put, delay } from "@redux-saga/core/effects";
-import { fetchMovieDetails, fetchPopularMovies, fetchSearchResults, fetchSimilarMovies, setGenres, setMovieDetails, setPopularMovies, setSearchResults, setSimilarMovies, setStatus, setTotalPages } from "../../redux/moviesSlice";
+import { fetchMovieDetails, fetchPopularMovies, fetchSearchResults, fetchSimilarMovies, setGenres, setMovieDetails, setPopularMovies, setSearchResults, setSimilarMovies, setStatus, setTotalPages, setTotalResults } from "../../redux/moviesSlice";
 import { getPopularMovies } from "./getPopularMovies";
 import { getGenres } from "./getGenres";
 import { getSimilarMovies } from "./getSimilarMovies";
@@ -64,9 +64,11 @@ function* fetchSearchbarResultsHandler({ payload }) {
 function* fetchSearchResultsHandler({ payload }) {
  try {
   yield put(setStatus("loading"));
-  const searchResults = yield call(getSearchResults, payload.searchQuery, payload.page);
+  console.log(payload);
+  const searchResults = yield call(getSearchResults, payload.searchQuery, payload.page, payload.category);
   yield put(setSearchResults(searchResults.results));
   yield put(setTotalPages(searchResults.total_pages));
+  yield put(setTotalResults(searchResults.total_results));
   yield delay(200);
   yield put(setStatus("success"));
  }

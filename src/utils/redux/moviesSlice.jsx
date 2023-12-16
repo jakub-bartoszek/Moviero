@@ -10,7 +10,8 @@ const moviesSlice = createSlice({
   similarMovies: [],
   movieDetails: [],
   genres: [],
-  totalPages: 1
+  totalPages: 1,
+  totalResults: 20
  },
  reducers: {
   fetchPopularMovies: () => {},
@@ -44,11 +45,15 @@ const moviesSlice = createSlice({
    } else {
     state.totalPages = payload;
    }
+  },
+  setTotalResults: (state, { payload }) => {
+   state.totalResults = payload;
   }
  }
 });
 
 export const {
+ setTotalResults,
  fetchPopularMovies,
  fetchSearchResults,
  setSearchResults,
@@ -70,6 +75,7 @@ export const selectSimilarMovies = (state) => state.movies.similarMovies;
 export const selectMovieDetails = (state) => state.movies.movieDetails;
 export const selectGenres = (state) => state.movies.genres;
 export const selectTotalPages = (state) => state.movies.totalPages;
+export const selectTotalResults = (state) => state.movies.totalResults;
 export const selectStatus = (state) => state.movies.status;
 export const selectSearchResults = (state) => state.movies.searchResults;
 
