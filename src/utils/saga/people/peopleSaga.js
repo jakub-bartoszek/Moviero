@@ -5,8 +5,6 @@ import { getPopularPeople } from "./getPopularPeople";
 function* fetchPopularPeopleHandler({ payload }) {
  try {
   yield put(setStatus("loading"));
-  console.log("działa")
-
   const popularMovies = yield call(getPopularPeople, payload.page);
   yield put(setPopularPeople(popularMovies.results));
   yield put(setTotalPages(popularMovies.total_pages));
