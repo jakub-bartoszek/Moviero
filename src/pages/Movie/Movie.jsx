@@ -40,74 +40,71 @@ export const Movie = () => {
  const genres = movie?.genres?.map((genre) => Object.values(genre)[1]);
 
  useEffect(() => {
-  window.scrollTo(0,0)
-},[])
+  window.scrollTo(0, 0);
+ }, []);
 
  useEffect(() => {
   dispatch(fetchMovie({ movieId: id }));
  }, [dispatch, id]);
 
- return (
-  <>
-   {
-    {
-     error: <>Error</>,
-     loading: <Loader />,
-     success: (
-      <Container>
-       <Banner
-        key={movie.id}
-        $bgImage={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
-       >
-        <MovieDetails>
-         <Title>{movie.title}</Title>
-         <Tagline>&quot;{movie.tagline}&quot;</Tagline>
-         <Year>{movie.release_date?.slice(0, 4)}</Year>
-         <Genres>
-          {genres?.map((genre) => (
-           <Genre key={nanoid()}>{genre}</Genre>
-          ))}
-         </Genres>
-         <Rating>
-          <StarIcon />
-          <Rate>
-           {movie.vote_average?.toFixed(1)}/<OutOf>10</OutOf>
-           <Votes>&nbsp;{movie.vote_count} votes</Votes>
-          </Rate>
-         </Rating>
-         <Description>{movie.overview}</Description>
-        </MovieDetails>
-       </Banner>
-       {movieCredits.cast?.length && (
-        <SectionWrapper>
-         <SectionHeader>Cast</SectionHeader>
-         <Cast>
-          {movieCredits.cast.map((person) => (
-           <PersonTile
-            key={nanoid()}
-            person={person}
-           />
-          ))}
-         </Cast>
-        </SectionWrapper>
-       )}
-       {movieCredits.crew?.length && (
-        <SectionWrapper>
-         <SectionHeader>Crew</SectionHeader>
-         <Crew>
-          {movieCredits.crew.map((person) => (
-           <PersonTile
-            key={nanoid()}
-            person={person}
-           />
-          ))}
-         </Crew>
-        </SectionWrapper>
-       )}
-      </Container>
-     )
-    }[status]
-   }
-  </>
- );
+ switch (status) {
+  case "success":
+   return (
+    <Container>
+     <Banner
+      key={movie.id}
+      $bgImage={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
+     >
+      <MovieDetails>
+       <Title>{movie.title}</Title>
+       <Tagline>&quot;{movie.tagline}&quot;</Tagline>
+       <Year>{movie.release_date?.slice(0, 4)}</Year>
+       <Genres>
+        {genres?.map((genre) => (
+         <Genre key={nanoid()}>{genre}</Genre>
+        ))}
+       </Genres>
+       <Rating>
+        <StarIcon />
+        <Rate>
+         {movie.vote_average?.toFixed(1)}/<OutOf>10</OutOf>
+         <Votes>&nbsp;{movie.vote_count} votes</Votes>
+        </Rate>
+       </Rating>
+       <Description>{movie.overview}</Description>
+      </MovieDetails>
+     </Banner>
+     {movieCredits.cast?.length && (
+      <SectionWrapper>
+       <SectionHeader>Cast</SectionHeader>
+       <Cast>
+        {movieCredits.cast.map((person) => (
+         <PersonTile
+          key={nanoid()}
+          person={person}
+         />
+        ))}
+       </Cast>
+      </SectionWrapper>
+     )}
+     {movieCredits.crew?.length && (
+      <SectionWrapper>
+       <SectionHeader>Crew</SectionHeader>
+       <Crew>
+        {movieCredits.crew.map((person) => (
+         <PersonTile
+          key={nanoid()}
+          person={person}
+         />
+        ))}
+       </Crew>
+      </SectionWrapper>
+     )}
+    </Container>
+   );
+  case "loading":
+   return <Loader />;
+  default:
+   return <>Error</>;
+ }
 };

@@ -1,7 +1,7 @@
 import axios from "axios";
 
-export const getSearchResults = async (searchQuery, page, category) => {
-  const response = await axios(`https://api.themoviedb.org/3/search/${category}?query=${searchQuery}&page=${page}`, {
+export const getPopularPeople = async (page) => {
+  const response = await axios(`https://api.themoviedb.org/3/person/popular?page=${page}`, {
     headers: {
       accept: "application/json",
       Authorization:

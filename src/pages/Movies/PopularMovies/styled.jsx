@@ -223,15 +223,3 @@ export const PopularMoviesList = styled.ul`
   grid-template-columns: repeat(1, 100%);
  }
 `;
-
-export const HorizontalMoviesWrapper = styled.section`
- max-height: 300px;
- height: 70vw;
- width: 100%;
- display: grid;
- grid-template-rows: auto 1fr;
-`;
-
-export const VerticalMoviesWrapper = styled.section`
- width: 100%;
-`;

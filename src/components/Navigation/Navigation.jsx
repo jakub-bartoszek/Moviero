@@ -25,7 +25,7 @@ export const Navigation = () => {
  const handleOutsideClick = (e) => {
   if (sidebarRef.current && !sidebarRef.current.contains(e.target)) {
    setIsShowed(false);
-   e.stopPropagation(); // Stop the event propagation
+   e.stopPropagation();
   }
  };
 
@@ -47,12 +47,10 @@ export const Navigation = () => {
     <Sidebar>
      <MenuHeader>
       <MenuButton onClick={handleButtonClick} />
-      <MenuLogo to="/people">Moviero</MenuLogo>
+      <MenuLogo>Moviero</MenuLogo>
      </MenuHeader>
-
-     <SidebarNavLink to="/movies">Movies</SidebarNavLink>
-     <SidebarNavLink to="/people">People</SidebarNavLink>
-     <SidebarNavLink to="/tvshows">TV Shows</SidebarNavLink>
+     <SidebarNavLink to="/movies?page=1">Movies</SidebarNavLink>
+     <SidebarNavLink to="/people?page=1">People</SidebarNavLink>
     </Sidebar>
     <SidebarBackground onClick={() => setIsShowed(false)} />
    </SidebarWrapper>
@@ -60,9 +58,8 @@ export const Navigation = () => {
     <MenuButton onClick={handleButtonClick} />
     <Logo />
     <Links>
-     <StyledNavLink to="/movies">Movies</StyledNavLink>
-     <StyledNavLink to="/people">People</StyledNavLink>
-     <StyledNavLink to="/tvshows">TV Shows</StyledNavLink>
+     <StyledNavLink to="/movies?page=1">Movies</StyledNavLink>
+     <StyledNavLink to="/people?page=1">People</StyledNavLink>
     </Links>
     <Searchbar />
    </Container>

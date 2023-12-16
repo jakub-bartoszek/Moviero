@@ -1,9 +1,11 @@
-import { useSelector } from "react-redux";
-import { selectTotalPages } from "../../utils/redux/moviesSlice";
 import { Container, PageCount, StyledButton } from "./styled";
 
-export const Pagination = ({ searchParams, setSearchParams, containerRef }) => {
- const totalPages = useSelector(selectTotalPages);
+export const Pagination = ({
+ searchParams,
+ setSearchParams,
+ containerRef,
+ totalPages
+}) => {
  const page = parseInt(searchParams.get("page"));
 
  const handlePageClickScroll = () => {

@@ -13,7 +13,9 @@ import {
  selectSearchQuery,
  selectSearchbarResults,
  selectSearchStatus,
- setSearchQuery
+ setSearchQuery,
+ setCategory,
+ selectCategory
 } from "../../utils/redux/searchSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { nanoid } from "nanoid";
@@ -28,6 +30,7 @@ export const Searchbar = () => {
  const [isExpanded, setIsExpanded] = useState(false);
  const inputRef = useRef(null);
  const wrapperRef = useRef(null);
+ const category = useSelector(selectCategory);
 
  const navigate = useNavigate();
  const dispatch = useDispatch();
@@ -42,7 +45,13 @@ export const Searchbar = () => {
 
  useEffect(() => {
   if (searchQuery !== "") {
-   dispatch(fetchSearchbarResults({ searchQuery: searchQuery, page: 1 }));
+   dispatch(
+    fetchSearchbarResults({
+     searchQuery: searchQuery,
+     page: 1,
+     category: category
+    })
+   );
   }
  }, [dispatch, searchQuery]);
 
@@ -59,7 +68,7 @@ export const Searchbar = () => {
  };
 
  const onFormSubmit = (e) => {
-  navigate(`/movies?search=${searchQuery}&page=1`);
+  navigate(`/${category}?search=${searchQuery}&page=1`);
   switchSearchbar();
  };
 
@@ -77,7 +86,7 @@ export const Searchbar = () => {
      value={searchQuery}
      onChange={(e) => dispatch(setSearchQuery(e.target.value))}
      ref={inputRef}
-     placeholder="Search for movies..."
+     placeholder={`Search for ${category === "movie" ? "movies" : "people"}...`}
     />
     {isExpanded && searchQuery && (
      <ResultList>
@@ -90,11 +99,11 @@ export const Searchbar = () => {
       {status === "success" && (
        <>
         {searchbarResults.length ? (
-         searchbarResults.map((movie) => (
+         searchbarResults.map((data) => (
           <SearchTile
            switchSearchbar={switchSearchbar}
            key={nanoid()}
-           movie={movie}
+           data={data}
           />
          ))
         ) : (

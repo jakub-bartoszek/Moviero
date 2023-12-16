@@ -5,12 +5,16 @@ const searchSlice = createSlice({
  initialState: {
   searchQuery: "",
   searchbarResults: [],
-  searchStatus: "loading"
+  searchStatus: "loading",
+  category: "movie"
  },
  reducers: {
   fetchSearchbarResults: () => {},
   setSearchQuery: (state, { payload }) => {
    state.searchQuery = payload;
+  },
+  setCategory: (state, { payload }) => {
+   state.category = payload;
   },
   setSearchbarResults: (state, { payload }) => {
    state.searchbarResults = payload;
@@ -24,6 +28,7 @@ const searchSlice = createSlice({
 export const {
  setSearchQuery,
  fetchSearchbarResults,
+ setCategory,
  setSearchbarResults,
  setSearchStatus
 } = searchSlice.actions;
@@ -31,5 +36,6 @@ export const {
 export const selectSearchQuery = (state) => state.search.searchQuery;
 export const selectSearchbarResults = (state) => state.search.searchbarResults;
 export const selectSearchStatus = (state) => state.search.searchStatus;
+export const selectCategory = (state) => state.search.category;
 
 export default searchSlice.reducer;

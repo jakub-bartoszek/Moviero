@@ -51,7 +51,7 @@ function* fetchMovieDetailsHandler({ payload }) {
 function* fetchSearchbarResultsHandler({ payload }) {
  try {
   yield put(setSearchStatus("loading"));
-  const searchbarResults = yield call(getSearchResults, payload.searchQuery, 1);
+  const searchbarResults = yield call(getSearchResults, payload.searchQuery, 1, payload.category);
   yield put(setSearchbarResults(searchbarResults.results));
   yield delay(200);
   yield put(setSearchStatus("success"));

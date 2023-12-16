@@ -1,25 +1,23 @@
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import { Container } from "../../components/Container/styled";
 import { useSearchParams } from "react-router-dom";
-import { Pagination } from "../../components/Pagination/Pagination";
 
-import { PopularMovies } from "./PopularMovies/PopularMovies";
-import { SearchedMovies } from "./SearchedMovies/SearchedMovies";
+import { PopularPeople } from "./PopularPeople/PopularPeople";
 import { useDispatch } from "react-redux";
 import { setCategory } from "../../utils/redux/searchSlice";
 
-export const Movies = () => {
+export const People = () => {
  const [searchParams, setSearchParams] = useSearchParams();
  const dispatch = useDispatch();
 
  useEffect(() => {
   window.scrollTo(0, 0);
-  dispatch(setCategory("movie"));
+  dispatch(setCategory("person"));
  }, []);
 
  return (
   <Container>
-   {searchParams.get("search") ? <SearchedMovies /> : <PopularMovies />}
+   <PopularPeople />
   </Container>
  );
 };
