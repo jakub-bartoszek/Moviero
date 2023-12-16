@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.js": "/Moviero/static/js/main.a5ac4cb5.js",
+    "main.js": "/Moviero/static/js/main.12cb8b90.js",
     "static/js/787.49f831b0.chunk.js": "/Moviero/static/js/787.49f831b0.chunk.js",
     "static/media/star.svg": "/Moviero/static/media/star.83f3f982c3b0fcbd90ea9e91720cb4dd.svg",
     "index.html": "/Moviero/index.html",
     "static/media/search.svg": "/Moviero/static/media/search.41e12b2e9125b7f2f4e0aa68493c6f32.svg",
     "static/media/menu.svg": "/Moviero/static/media/menu.03fa6e3702cb0272e6691582549b5072.svg",
-    "main.a5ac4cb5.js.map": "/Moviero/static/js/main.a5ac4cb5.js.map",
+    "main.12cb8b90.js.map": "/Moviero/static/js/main.12cb8b90.js.map",
     "787.49f831b0.chunk.js.map": "/Moviero/static/js/787.49f831b0.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.a5ac4cb5.js"
+    "static/js/main.12cb8b90.js"
   ]
 }
