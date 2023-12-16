@@ -14,6 +14,10 @@ export const StyledLink = styled(Link)`
  cursor: pointer;
  height: 100%;
  text-decoration: none;
+
+ &:hover {
+  background-color: #003f52;
+ }
 `;
 
 export const ImageWrapper = styled.div`
