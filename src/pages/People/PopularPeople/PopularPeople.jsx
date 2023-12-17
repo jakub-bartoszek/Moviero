@@ -1,5 +1,5 @@
 import { nanoid } from "nanoid";
-import { Container, PopularPeopleList } from "./styled";
+import { Container, PopularPeopleList } from "../styled";
 import { useDispatch, useSelector } from "react-redux";
 import {
  fetchPopularPeople,
