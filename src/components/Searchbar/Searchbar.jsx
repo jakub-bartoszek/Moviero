@@ -12,10 +12,9 @@ import {
  fetchSearchbarResults,
  selectSearchQuery,
  selectSearchbarResults,
- selectSearchStatus,
  setSearchQuery,
- setCategory,
- selectCategory
+ selectCategory,
+ selectSearchbarStatus
 } from "../../utils/redux/searchSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { nanoid } from "nanoid";
@@ -26,7 +25,7 @@ import { useNavigate, useParams, useSearchParams } from "react-router-dom";
 export const Searchbar = () => {
  const searchQuery = useSelector(selectSearchQuery);
  const searchbarResults = useSelector(selectSearchbarResults);
- const status = useSelector(selectSearchStatus);
+ const status = useSelector(selectSearchbarStatus);
  const [isExpanded, setIsExpanded] = useState(false);
  const inputRef = useRef(null);
  const wrapperRef = useRef(null);
@@ -45,11 +44,6 @@ export const Searchbar = () => {
 
  useEffect(() => {
   if (searchQuery !== "") {
-   console.log({
-    searchQuery: searchQuery,
-    page: 1,
-    category: category
-   })
    dispatch(
     fetchSearchbarResults({
      searchQuery: searchQuery,
