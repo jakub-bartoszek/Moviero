@@ -19,7 +19,7 @@ export const Banner = styled.div`
 export const ImageWrapper = styled.div`
  height: 100%;
  aspect-ratio: 6/9;
- background-color: red;
+ background-color: black;
 `;
 
 export const Image = styled.img`
