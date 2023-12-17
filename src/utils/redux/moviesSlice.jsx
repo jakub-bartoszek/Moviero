@@ -5,25 +5,20 @@ const moviesSlice = createSlice({
  initialState: {
   status: "loading",
   popularMovies: [],
-  searchResults: [],
   randomPopularMovie: {},
   similarMovies: [],
   movieDetails: [],
   genres: [],
   totalPages: 1,
-  totalResults: 20
  },
  reducers: {
   fetchPopularMovies: () => {},
   fetchSimilarMovies: () => {},
-  fetchSearchResults: () => {},
   fetchMovieDetails: () => {},
   setStatus: (state, { payload }) => {
    state.status = payload;
   },
-  setSearchResults: (state, { payload }) => {
-   state.searchResults = payload;
-  },
+
   setPopularMovies: (state, { payload }) => {
    state.popularMovies = payload;
   },
@@ -45,18 +40,12 @@ const moviesSlice = createSlice({
    } else {
     state.totalPages = payload;
    }
-  },
-  setTotalResults: (state, { payload }) => {
-   state.totalResults = payload;
   }
  }
 });
 
 export const {
- setTotalResults,
  fetchPopularMovies,
- fetchSearchResults,
- setSearchResults,
  setRandomPopularMovie,
  fetchSimilarMovies,
  fetchMovieDetails,
@@ -75,8 +64,6 @@ export const selectSimilarMovies = (state) => state.movies.similarMovies;
 export const selectMovieDetails = (state) => state.movies.movieDetails;
 export const selectGenres = (state) => state.movies.genres;
 export const selectTotalPages = (state) => state.movies.totalPages;
-export const selectTotalResults = (state) => state.movies.totalResults;
 export const selectStatus = (state) => state.movies.status;
-export const selectSearchResults = (state) => state.movies.searchResults;
 
 export default moviesSlice.reducer;
