@@ -3,6 +3,7 @@ import moviesReducer from "./moviesSlice";
 import searchReducer from "./searchSlice";
 import movieReducer from "./movieSlice";
 import peopleReducer from "./peopleSlice";
+import personReducer from "./personSlice";
 import createSagaMiddleware from "@redux-saga/core";
 import rootSaga from "../saga/rootSaga";
 
@@ -14,6 +15,7 @@ const store = configureStore({
   search: searchReducer,
   movie: movieReducer,
   people: peopleReducer,
+  person: personReducer
  },
  middleware: [sagaMiddleWare]
 });
