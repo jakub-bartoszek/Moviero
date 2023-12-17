@@ -11,10 +11,7 @@
 Movie browser that includes, movies, actors and TV shows.
 
 ## Things to add
-- People browser
 - Person page
-- TV show browser
-- TV show page
 - Debounced searching
 - Re-styled description of movie
 
