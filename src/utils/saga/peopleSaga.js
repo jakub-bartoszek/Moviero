@@ -1,11 +1,11 @@
 import { takeLatest, call, put, delay } from "@redux-saga/core/effects";
-import { fetchPopularPeople, setPopularPeople, setStatus, setTotalPages } from "../../redux/peopleSlice";
-import { getPopularPeople } from "./getPopularPeople";
+import { fetchPopularPeople, setPopularPeople, setStatus, setTotalPages } from "../redux/peopleSlice";
+import { fetchAPI } from "../fetchAPI";
 
 function* fetchPopularPeopleHandler({ payload }) {
  try {
   yield put(setStatus("loading"));
-  const popularMovies = yield call(getPopularPeople, payload.page);
+  const popularMovies = yield call(fetchAPI, `person/popular?page=${payload.page}`);
   yield put(setPopularPeople(popularMovies.results));
   yield put(setTotalPages(popularMovies.total_pages));
   yield delay(500);

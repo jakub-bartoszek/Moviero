@@ -1,11 +1,11 @@
 import { takeLatest, call, put, delay } from "@redux-saga/core/effects";
-import { fetchSearchbarResults, fetchSearchResults, setSearchbarResults, setSearchbarStatus, setSearchResults, setSearchStatus, setTotalPages, setTotalResults } from "../../redux/searchSlice";
-import { getSearchResults } from "./getSearchResults";
+import { fetchSearchbarResults, fetchSearchResults, setSearchbarResults, setSearchbarStatus, setSearchResults, setSearchStatus, setTotalPages, setTotalResults } from "../redux/searchSlice";
+import { fetchAPI } from "../fetchAPI";
 
 function* fetchSearchbarResultsHandler({ payload }) {
  try {
   yield put(setSearchbarStatus("loading"));
-  const searchbarResults = yield call(getSearchResults, payload.searchQuery, 1, payload.category);
+  const searchbarResults = yield call(fetchAPI, `search/${payload.category}?query=${payload.searchQuery}&page=${payload.page}`);
   yield put(setSearchbarResults(searchbarResults.results));
   yield delay(200);
   yield put(setSearchbarStatus("success"));
@@ -18,7 +18,7 @@ function* fetchSearchbarResultsHandler({ payload }) {
 function* fetchSearchResultsHandler({ payload }) {
  try {
   yield put(setSearchStatus("loading"));
-  const searchResults = yield call(getSearchResults, payload.searchQuery, payload.page, payload.category);
+  const searchResults = yield call(fetchAPI, `search/${payload.category}?query=${payload.searchQuery}&page=${payload.page}`);
   yield put(setSearchResults(searchResults.results));
   yield put(setTotalPages(searchResults.total_pages));
   yield put(setTotalResults(searchResults.total_results));
