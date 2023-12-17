@@ -1,12 +1,14 @@
 import { useDispatch, useSelector } from "react-redux";
 import {
- fetchSearchResults,
  selectGenres,
- selectSearchResults,
- selectStatus,
  selectTotalPages,
- selectTotalResults
 } from "../../../utils/redux/moviesSlice";
+import {
+  fetchSearchResults,
+  selectSearchResults,
+  selectSearchStatus,
+  selectTotalResults
+ } from "../../../utils/redux/searchSlice";
 import { useEffect, useRef } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Pagination } from "../../../components/Pagination/Pagination";
@@ -16,18 +18,16 @@ import { Loader } from "../../../components/Loader/Loader";
 import { SearchResultsList, Container } from "./styled";
 import { VerticalSection } from "../../../components/VerticalSection/styled";
 import { SectionHeader } from "../../../components/SectionHeader/styled";
-import { selectCategory } from "../../../utils/redux/searchSlice";
 
 export const SearchedMovies = () => {
  const dispatch = useDispatch();
- const status = useSelector(selectStatus);
+ const status = useSelector(selectSearchStatus);
  const searchResults = useSelector(selectSearchResults);
  const genres = useSelector(selectGenres);
  const [searchParams, setSearchParams] = useSearchParams();
  const containerRef = useRef(null);
  const totalPages = useSelector(selectTotalPages);
  const totalResults = useSelector(selectTotalResults);
- const category = useSelector(selectCategory);
 
  useEffect(() => {
   searchParams.set("page", 1);
@@ -40,7 +40,7 @@ export const SearchedMovies = () => {
     fetchSearchResults({
      searchQuery: searchParams.get("search"),
      page: searchParams.get("page"),
-     category: category
+     category: "movie"
     })
    );
   }
