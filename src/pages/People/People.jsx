@@ -5,6 +5,7 @@ import { useSearchParams } from "react-router-dom";
 import { PopularPeople } from "./PopularPeople/PopularPeople";
 import { useDispatch } from "react-redux";
 import { setCategory } from "../../utils/redux/searchSlice";
+import { SearchedPeople } from "./SearchedPeople/SearchedPeople";
 
 export const People = () => {
  const [searchParams, setSearchParams] = useSearchParams();
@@ -17,7 +18,7 @@ export const People = () => {
 
  return (
   <Container>
-   <PopularPeople />
+   {searchParams.get("search") ? <SearchedPeople /> : <PopularPeople />}
   </Container>
  );
 };
