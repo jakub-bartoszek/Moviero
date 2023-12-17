@@ -47,7 +47,7 @@ export const Navigation = () => {
     <Sidebar>
      <MenuHeader>
       <MenuButton onClick={handleButtonClick} />
-      <MenuLogo>Moviero</MenuLogo>
+      <Logo />
      </MenuHeader>
      <SidebarNavLink to="/movies?page=1">Movies</SidebarNavLink>
      <SidebarNavLink to="/people?page=1">People</SidebarNavLink>
