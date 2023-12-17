@@ -34,11 +34,11 @@ export const SearchTile = ({ data, switchSearchbar }) => {
      <Content>
       <Info>
        <Title> {data.title}</Title>
-       <Year> {data.release_date.slice(0, 4)}</Year>
+       <Year> {data.release_date?.slice(0, 4)}</Year>
       </Info>
       <Rating>
        <StarIcon />
-       <Rate>{data.vote_average.toFixed(1)}</Rate>
+       <Rate>{data.vote_average?.toFixed(1)}</Rate>
        <Votes>{data.vote_count}</Votes>
       </Rating>
      </Content>
