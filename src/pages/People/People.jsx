@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { Container } from "../../components/Container/styled";
 import { useSearchParams } from "react-router-dom";
-
 import { PopularPeople } from "./PopularPeople/PopularPeople";
 import { useDispatch } from "react-redux";
 import { setCategory } from "../../utils/redux/searchSlice";
