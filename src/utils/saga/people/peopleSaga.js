@@ -1,4 +1,4 @@
-import { takeLatest, call, put } from "@redux-saga/core/effects";
+import { takeLatest, call, put, delay } from "@redux-saga/core/effects";
 import { fetchPopularPeople, setPopularPeople, setStatus, setTotalPages } from "../../redux/peopleSlice";
 import { getPopularPeople } from "./getPopularPeople";
 
@@ -8,6 +8,7 @@ function* fetchPopularPeopleHandler({ payload }) {
   const popularMovies = yield call(getPopularPeople, payload.page);
   yield put(setPopularPeople(popularMovies.results));
   yield put(setTotalPages(popularMovies.total_pages));
+  yield delay(500);
   yield put(setStatus("success"));
  }
  catch (error) {
