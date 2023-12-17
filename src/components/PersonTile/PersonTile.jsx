@@ -1,3 +1,4 @@
+import { toPerson } from "../../routes";
 import {
  Content,
  Job,
@@ -13,7 +14,7 @@ import {
 export const PersonTile = ({ person }) => {
  return (
   <Wrapper>
-   <StyledLink>
+   <StyledLink to={toPerson({ id: person.id })}>
     <ImageWrapper>
      {person.profile_path && (
       <Image src={`https://image.tmdb.org/t/p/w400/${person.profile_path}`} />
