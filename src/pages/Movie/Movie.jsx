@@ -56,9 +56,9 @@ const Movie = () => {
       $bgImage={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
      >
       <MovieDetails>
-       <Title>{movie.title}</Title>
-       <Tagline>&quot;{movie.tagline}&quot;</Tagline>
-       <Year>{movie.release_date?.slice(0, 4)}</Year>
+       {movie.title && <Title>{movie.title}</Title>}
+       {movie.tagline && <Tagline>&quot;{movie.tagline}&quot;</Tagline>}
+       {movie.release_date && <Year>{movie.release_date?.slice(0, 4)}</Year>}
        <Genres>
         {genres?.map((genre) => (
          <Genre key={nanoid()}>{genre}</Genre>

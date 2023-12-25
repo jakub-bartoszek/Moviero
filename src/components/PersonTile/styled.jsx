@@ -6,9 +6,9 @@ export const Wrapper = styled.li``;
 export const StyledLink = styled(Link)`
  display: grid;
  grid-template-rows: auto 1fr;
- color: white;
+ color: ${({ theme }) => theme.colors.site.text};
  padding: 0;
- background-color: rgb(0, 34, 44);
+ background-color: ${({ theme }) => theme.colors.tile.background};
  border-radius: 5px;
  transition: all 0.3s;
  cursor: pointer;
@@ -16,7 +16,7 @@ export const StyledLink = styled(Link)`
  text-decoration: none;
 
  &:hover {
-  background-color: #003f52;
+  background-color: ${({ theme }) => theme.colors.tile.hoverBackground};
  }
 `;
 
@@ -53,9 +53,9 @@ export const Content = styled.div`
 export const Name = styled.p``;
 
 export const Role = styled.p`
- color: grey;
+ color: ${({ theme }) => theme.colors.site.textMuted};
 `;
 
 export const Job = styled.p`
- color: grey;
+ color: ${({ theme }) => theme.colors.site.textMuted};
 `;

@@ -2,18 +2,14 @@ import styled from "styled-components";
 import { ReactComponent as Star } from "../../assets/icons/star.svg";
 import { Link } from "react-router-dom";
 
-
-
-export const Wrapper = styled.li`
-
-`;
+export const Wrapper = styled.li``;
 
 export const StyledLink = styled(Link)`
  display: grid;
  grid-template-rows: auto 1fr;
- color: white;
+ color: ${({ theme }) => theme.colors.site.text};
  padding: 0;
- background-color: rgb(0, 34, 44);
+ background-color: ${({ theme }) => theme.colors.tile.background};
  border-radius: 5px;
  transition: all 0.3s;
  cursor: pointer;
@@ -34,7 +30,7 @@ export const StyledLink = styled(Link)`
   box-shadow: 0 10px 50px 0 #00000080;
   z-index: 1;
  }
-`
+`;
 
 export const PosterWrapper = styled.div`
  width: 100%;
@@ -84,7 +80,7 @@ export const Title = styled.div`
 `;
 
 export const Year = styled.div`
- color: grey;
+ color: ${({ theme }) => theme.colors.site.mutedText};
 
  @media (max-width: ${({ theme }) => theme.breakpoints.m}) {
   font-size: 14px;
@@ -104,7 +100,7 @@ export const Genres = styled.ul`
 `;
 
 export const Genre = styled.li`
- background-color: #00000040;
+ background-color: ${({ theme }) => theme.colors.site.blurredBackground};
  padding: 6px;
  font-size: 14px;
  border-radius: 5px;
@@ -129,7 +125,7 @@ export const Rating = styled.div`
 export const Rate = styled.div``;
 
 export const Votes = styled.div`
- color: grey;
+ color: ${({ theme }) => theme.colors.site.mutedText};
  &::after {
   content: " votes";
  }

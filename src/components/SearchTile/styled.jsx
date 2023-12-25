@@ -7,19 +7,22 @@ export const Wrapper = styled.li``;
 export const StyledLink = styled(Link)`
  display: grid;
  grid-template-columns: 20% 80%;
- color: white;
  padding: 0;
- background-color: rgb(0, 34, 44);
+ color: ${({ theme }) => theme.colors.site.text};
+ background-color: ${({ theme }) => theme.colors.tile.background};
  transition: all 0.3s;
  cursor: pointer;
  text-decoration: none;
+
+ &:hover {
+  background-color: ${({ theme }) => theme.colors.tile.hoverBackground};
+ }
 `;
 
 export const PosterWrapper = styled.div`
  width: 100%;
  aspect-ratio: 6/9;
  display: flex;
-
  background-color: black;
 `;
 
@@ -61,7 +64,7 @@ export const Title = styled.div`
 `;
 
 export const Year = styled.div`
- color: grey;
+ color: ${({ theme }) => theme.colors.site.mutedText};
  font-size: 16px;
 
  @media (max-width: ${({ theme }) => theme.breakpoints.s}) {
@@ -84,7 +87,7 @@ export const Rating = styled.div`
 export const Rate = styled.div``;
 
 export const Votes = styled.div`
- color: grey;
+ color: ${({ theme }) => theme.colors.site.mutedText};
 
  &::after {
   content: " votes";

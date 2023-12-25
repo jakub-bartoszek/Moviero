@@ -7,14 +7,14 @@ export const Container = styled.div`
  justify-content: center;
  align-items: center;
  padding: 24px 0;
- color: white;
 `;
 
 export const StyledButton = styled.button`
- color: white;
  height: 32px;
  padding: 0 24px;
- background-color: #00222c;
+ background-color: ${({ theme }) => theme.colors.tile.background};
+ color: ${({ theme }) => theme.colors.site.text};
+
  border: none;
  border-radius: 10px;
  cursor: pointer;
@@ -22,14 +22,17 @@ export const StyledButton = styled.button`
 
  &:hover {
   scale: 105%;
-  background-color: #003f52;
+  background-color: ${({ theme }) => theme.colors.tile.hoverBackground};
+;
  }
 
  &:disabled {
   cursor: auto;
-  color: grey;
+  color: ${({ theme }) => theme.colors.site.mutedText};
+;
   scale: 100%;
-  background-color: #00222c;
+  background-color: ${({ theme }) => theme.colors.tile.background};
+;
  }
 
  @media (max-width: ${({ theme }) => theme.breakpoints.m}) {
@@ -52,4 +55,4 @@ export const PageCount = styled.span`
  @media (max-width: ${({ theme }) => theme.breakpoints.s}) {
   font-size: 10px;
  }
-`
+`;

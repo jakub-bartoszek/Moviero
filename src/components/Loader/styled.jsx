@@ -9,7 +9,7 @@ export const Container = styled.div`
 `;
 
 export const Item = styled.div`
- background-color: #00ffff;
+ background-color: ${({ theme }) => theme.colors.site.primaryText};
  display: inline-block;
  position: absolute;
  left: 8px;

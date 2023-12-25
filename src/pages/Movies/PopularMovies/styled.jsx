@@ -5,15 +5,16 @@ import { Link } from "react-router-dom";
 export const Container = styled.div``;
 
 export const Banner = styled.div`
- box-shadow: inset 0px 0px 80px 100px #00141a, inset 0px 0px 50px 50px #00141a;
+ box-shadow: inset 0px 0px 80px 100px
+   ${({ theme }) => theme.colors.site.background},
+  inset 0px 0px 50px 50px ${({ theme }) => theme.colors.site.background};
  width: 100%;
  height: 100vw;
  max-height: 570px;
  background-image: ${({ $bgImage }) => `url(${$bgImage})`};
  background-size: cover;
  background-position: top;
- color: white;
- border: 1px solid #00141a;
+ border: 1px solid ${({ theme }) => theme.colors.site.background};
  animation: loading 1s ease-in;
 
  @keyframes loading {
@@ -26,12 +27,14 @@ export const Banner = styled.div`
  }
 
  @media (max-width: ${({ theme }) => theme.breakpoints.m}) {
-  box-shadow: inset 0px 0px 60px 80px #00141a;
+  box-shadow: inset 0px 0px 60px 80px
+   ${({ theme }) => theme.colors.site.background};
  }
 
  @media (max-width: ${({ theme }) => theme.breakpoints.s}) {
   gap: 8px;
-  box-shadow: inset 0px 0px 30px 50px #00141a;
+  box-shadow: inset 0px 0px 30px 50px
+   ${({ theme }) => theme.colors.site.background};
  }
 `;
 
@@ -46,7 +49,7 @@ export const MovieDetails = styled.div`
 
 export const Title = styled(Link)`
  text-decoration: none;
- color: white;
+ color: ${({ theme }) => theme.colors.site.text};
  font-weight: 500;
  font-size: 72px;
  padding: 0;
@@ -81,7 +84,7 @@ export const Genres = styled.div`
 `;
 
 export const Genre = styled.div`
- background-color: #00000070;
+ background-color: ${({ theme }) => theme.colors.site.blurredBackground};
  padding: 6px;
  font-size: 12px;
  border-radius: 5px;
@@ -128,7 +131,7 @@ export const OutOf = styled.span`
 
 export const Votes = styled.span`
  font-weight: 300;
- color: #d1d1d1;
+ color: ${({ theme }) => theme.colors.site.mutedText};
  font-size: 16px;
 
  @media (max-width: ${({ theme }) => theme.breakpoints.s}) {
@@ -141,7 +144,7 @@ export const Description = styled.p`
  width: 50%;
  overflow-y: auto;
  border-radius: 10px;
- background-color: #00000050;
+ background-color: ${({ theme }) => theme.colors.site.blurredBackground};
  font-size: 16px;
  font-weight: 300;
  backdrop-filter: blur(5px);
@@ -167,7 +170,7 @@ export const PosterWrapper = styled.li`
   $current &&
   css`
    scale: 105%;
-   box-shadow: 0 0 50px 30px #00141a;
+   box-shadow: 0 0 50px 30px ${({ theme }) => theme.colors.site.background};
    z-index: 1;
    filter: brightness(110%);
   `}

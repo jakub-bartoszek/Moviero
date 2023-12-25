@@ -15,10 +15,10 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: 'Poppins', sans-serif;
-    color: black;
-    background-color: #00141a;
+    color: ${({ theme }) => theme.colors.site.text};
+    background-color: ${({ theme }) => theme.colors.site.background};
     height: 100vh;
-    margin: 0; /* Ensure no default margin */
+    margin: 0;
   }
 
   #root {

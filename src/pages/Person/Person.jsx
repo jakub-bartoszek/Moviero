@@ -51,9 +51,9 @@ const Person = () => {
        />
       </ImageWrapper>
       <PersonDetails>
-       <Name>{person.name}</Name>
-       <Birthdate>{person.birthday}</Birthdate>
-       <Birthplace>{person.place_of_birth}</Birthplace>
+       {person.name && <Name>{person.name}</Name>}
+       {person.birthday && <Birthdate>{person.birthday}</Birthdate>}
+       {person.place_of_birth && <Birthplace>{person.place_of_birth}</Birthplace>}
       </PersonDetails>
       <Biography>{person.biography}</Biography>
      </Banner>

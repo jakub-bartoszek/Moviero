@@ -23,8 +23,7 @@ export const Name = styled.h1`
 
 export const Banner = styled.div`
  width: 100%;
- color: white;
- border: 1px solid #00141a;
+ border: 1px solid ${({ theme }) => theme.colors.site.background};
  display: grid;
  grid-template-columns: 30% 70%;
  gap: 16px;
@@ -40,7 +39,6 @@ export const SectionWrapper = styled.section`
 `;
 
 export const SectionHeader = styled.h2`
- color: white;
  width: 100%;
  font-size: 32px;
  margin: 0;
@@ -64,14 +62,14 @@ export const PersonDetails = styled.div`
 export const Birthdate = styled.div`
  &::before {
   content: "Date of birth: ";
-  color: grey;
+  color: ${({ theme }) => theme.colors.site.mutedText};
  }
 `;
 
 export const Birthplace = styled.div`
  &::before {
   content: "Place of birth: ";
-  color: grey;
+  color: ${({ theme }) => theme.colors.site.mutedText};
  }
 `;
 

@@ -4,14 +4,12 @@ import { ReactComponent as Menu } from "../../assets/icons/menu.svg";
 
 export const Wrapper = styled.nav`
  width: 100%;
- background: rgb(0, 34, 44);
  background: linear-gradient(
   0deg,
   rgba(0, 34, 44, 0.5) 0%,
   rgba(0, 34, 44, 1) 100%
  );
  height: 72px;
- color: white;
  border-bottom: 2px solid #ffffff30;
  position: fixed;
  top: 0;
@@ -24,7 +22,6 @@ export const Container = styled.div`
  margin: 0 auto;
  max-width: 1400px;
  padding: 0 16px;
- color: white;
  display: grid;
  align-items: center;
  justify-content: space-between;
@@ -54,11 +51,10 @@ export const Links = styled.div`
 
 export const StyledNavLink = styled(NavLink)`
  text-decoration: none;
- color: inherit;
  font-size: 16px;
  font-weight: 400;
  padding: 16px;
- color: white;
+ color: ${({ theme }) => theme.colors.site.text};
  white-space: nowrap;
 
  @media (max-width: ${({ theme }) => theme.breakpoints.s}) {
@@ -74,7 +70,7 @@ export const MenuHeader = styled.div`
 
 export const MenuButton = styled(Menu)`
  display: none;
- color: cyan;
+ color: ${({ theme }) => theme.colors.site.primaryText};
  height: 32px;
  width: 32px;
  cursor: pointer;
@@ -92,17 +88,16 @@ export const MenuLogo = styled.div`
  align-items: center;
  font-size: 24px;
  font-weight: 700;
- color: rgb(0, 255, 255);
- text-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+ color: ${({ theme }) => theme.colors.site.primaryText};
+ text-shadow: 0 0 15px ${({ theme }) => theme.colors.site.primaryText};
  text-decoration: none;
 `;
 
 export const SidebarNavLink = styled(NavLink)`
  text-decoration: none;
- color: inherit;
  font-size: 16px;
  font-weight: 400;
- color: white;
+ color: ${({ theme }) => theme.colors.site.text};
  white-space: nowrap;
  width: 100%;
 `;
@@ -126,7 +121,7 @@ export const Sidebar = styled.div`
  flex-direction: column;
  padding: 20px 16px;
  gap: 16px;
- background-color: #00222c;
+ background-color: ${({ theme }) => theme.colors.site.background};
  box-shadow: 0 0 80px 30px black;
 `;
 
