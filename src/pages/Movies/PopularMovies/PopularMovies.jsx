@@ -1,3 +1,6 @@
+import { useEffect, useRef, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useSearchParams } from "react-router-dom";
 import { nanoid } from "nanoid";
 import {
  Banner,
@@ -18,7 +21,12 @@ import {
  Container
 } from "./styled";
 import { Tile } from "../../../components/Tile/Tile";
-import { useDispatch, useSelector } from "react-redux";
+import { Loader } from "../../../components/Loader/Loader";
+import { Pagination } from "../../../components/Pagination/Pagination";
+import { toMovie } from "../../../routes";
+import { VerticalSection } from "../../../components/VerticalSection/styled";
+import { HorizontalSection } from "../../../components/HorizontalSection/styled";
+import { SectionHeader } from "../../../components/SectionHeader/styled";
 import {
  fetchPopularMovies,
  fetchSimilarMovies,
@@ -30,14 +38,6 @@ import {
  selectTotalPages,
  setRandomPopularMovie
 } from "../../../utils/redux/moviesSlice";
-import { useEffect, useRef, useState } from "react";
-import { useSearchParams } from "react-router-dom";
-import { Loader } from "../../../components/Loader/Loader";
-import { Pagination } from "../../../components/Pagination/Pagination";
-import { toMovie } from "../../../routes";
-import { VerticalSection } from "../../../components/VerticalSection/styled";
-import { HorizontalSection } from "../../../components/HorizontalSection/styled";
-import { SectionHeader } from "../../../components/SectionHeader/styled";
 
 export const PopularMovies = () => {
  const dispatch = useDispatch();

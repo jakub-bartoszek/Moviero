@@ -2,9 +2,7 @@ import styled, { css } from "styled-components";
 import { ReactComponent as Star } from "../../../assets/icons/star.svg";
 import { Link } from "react-router-dom";
 
-export const Container = styled.div`
-`;
-
+export const Container = styled.div``;
 
 export const Banner = styled.div`
  box-shadow: inset 0px 0px 80px 100px #00141a, inset 0px 0px 50px 50px #00141a;
@@ -16,8 +14,8 @@ export const Banner = styled.div`
  background-position: top;
  color: white;
  border: 1px solid #00141a;
-
  animation: loading 1s ease-in;
+
  @keyframes loading {
   0% {
    opacity: 0%;
@@ -47,9 +45,9 @@ export const MovieDetails = styled.div`
 `;
 
 export const Title = styled(Link)`
-text-decoration: none;
-color: white;
-font-weight: 500;
+ text-decoration: none;
+ color: white;
+ font-weight: 500;
  font-size: 72px;
  padding: 0;
  margin: 0;
@@ -58,12 +56,15 @@ font-weight: 500;
  @media (max-width: ${({ theme }) => theme.breakpoints.l}) {
   font-size: 64px;
  }
+
  @media (max-width: ${({ theme }) => theme.breakpoints.m}) {
   font-size: 52px;
  }
+
  @media (max-width: ${({ theme }) => theme.breakpoints.s}) {
   font-size: 40px;
  }
+
  @media (max-width: ${({ theme }) => theme.breakpoints.xs}) {
   font-size: 24px;
  }
@@ -73,7 +74,6 @@ export const Genres = styled.div`
  display: flex;
  flex-wrap: wrap;
  gap: 8px;
- width: 50%;
 
  @media (max-width: ${({ theme }) => theme.breakpoints.s}) {
   gap: 4px;

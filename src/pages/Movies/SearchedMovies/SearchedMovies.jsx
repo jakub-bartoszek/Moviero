@@ -1,19 +1,19 @@
+import { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useSearchParams } from "react-router-dom";
+import { nanoid } from "nanoid";
+import {
+ fetchSearchResults,
+ selectSearchResults,
+ selectSearchStatus,
+ selectTotalResults
+} from "../../../utils/redux/searchSlice";
 import {
  selectGenres,
- selectTotalPages,
+ selectTotalPages
 } from "../../../utils/redux/moviesSlice";
-import {
-  fetchSearchResults,
-  selectSearchResults,
-  selectSearchStatus,
-  selectTotalResults
- } from "../../../utils/redux/searchSlice";
-import { useEffect, useRef } from "react";
-import { useSearchParams } from "react-router-dom";
 import { Pagination } from "../../../components/Pagination/Pagination";
 import { Tile } from "../../../components/Tile/Tile";
-import { nanoid } from "nanoid";
 import { Loader } from "../../../components/Loader/Loader";
 import { SearchResultsList, Container } from "./styled";
 import { VerticalSection } from "../../../components/VerticalSection/styled";
@@ -24,10 +24,11 @@ export const SearchedMovies = () => {
  const status = useSelector(selectSearchStatus);
  const searchResults = useSelector(selectSearchResults);
  const genres = useSelector(selectGenres);
- const [searchParams, setSearchParams] = useSearchParams();
- const containerRef = useRef(null);
  const totalPages = useSelector(selectTotalPages);
  const totalResults = useSelector(selectTotalResults);
+
+ const [searchParams, setSearchParams] = useSearchParams();
+ const containerRef = useRef(null);
 
  useEffect(() => {
   searchParams.set("page", 1);
@@ -78,7 +79,7 @@ export const SearchedMovies = () => {
      ) : (
       <VerticalSection>
        <SectionHeader>
-        {`No earch results for "${searchParams.get("search")}"`}
+        {`No search results for "${searchParams.get("search")}"`}
        </SectionHeader>
       </VerticalSection>
      )}

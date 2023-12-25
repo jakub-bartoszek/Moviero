@@ -6,7 +6,7 @@ import { SearchedMovies } from "./SearchedMovies/SearchedMovies";
 import { useDispatch } from "react-redux";
 import { setCategory } from "../../utils/redux/searchSlice";
 
-export const Movies = () => {
+const Movies = () => {
  const [searchParams, setSearchParams] = useSearchParams();
  const dispatch = useDispatch();
 
@@ -26,3 +26,5 @@ export const Movies = () => {
   </Container>
  );
 };
+
+export default Movies;
