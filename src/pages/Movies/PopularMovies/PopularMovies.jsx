@@ -67,15 +67,10 @@ export const PopularMovies = () => {
  };
 
  useEffect(() => {
-  searchParams.set("page", 1);
-  setSearchParams(searchParams);
- }, []);
-
- useEffect(() => {
   if (searchParams.get("page")) {
    dispatch(fetchPopularMovies({ page: searchParams.get("page") }));
   }
- }, [searchParams, dispatch]);
+ }, [searchParams]);
 
  useEffect(() => {
   if (popularMovies.length > 0) {
@@ -99,7 +94,7 @@ export const PopularMovies = () => {
    );
    setCancel(true);
   }
- }, [cancel, currentMovie, dispatch]);
+ }, [dispatch, cancel, currentMovie]);
 
  switch (status) {
   case `success`:
@@ -174,7 +169,7 @@ export const PopularMovies = () => {
      />
     </Container>
    );
-  case 'loading':
+  case "loading":
    return <Loader />;
   default:
    return <>Error</>;
