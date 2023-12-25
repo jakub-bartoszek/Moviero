@@ -26,7 +26,7 @@ export const PopularPeople = () => {
  useEffect(() => {
   searchParams.set("page", 1);
   setSearchParams(searchParams);
- }, []);
+ }, [searchParams, setSearchParams]);
 
  useEffect(() => {
   if (searchParams.get("page")) {
@@ -35,7 +35,7 @@ export const PopularPeople = () => {
  }, [searchParams, dispatch]);
 
  switch (status) {
-  case `success`:
+  case "success":
    return (
     <Container ref={containerRef}>
      {popularPeople.length && (
@@ -43,7 +43,10 @@ export const PopularPeople = () => {
        <SectionHeader>Popular people</SectionHeader>
        <PopularPeopleList>
         {popularPeople.map((person) => (
-         <PersonTile key={nanoid()} person={person} />
+         <PersonTile
+          key={nanoid()}
+          person={person}
+         />
         ))}
        </PopularPeopleList>
       </VerticalSection>

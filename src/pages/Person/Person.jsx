@@ -25,7 +25,7 @@ import { Tile } from "../../components/Tile/Tile";
 import { nanoid } from "nanoid";
 import { Loader } from "../../components/Loader/Loader";
 
-export const Person = () => {
+const Person = () => {
  const { id } = useParams();
  const dispatch = useDispatch();
  const person = useSelector(selectPerson);
@@ -74,7 +74,7 @@ export const Person = () => {
       <SectionWrapper>
        <SectionHeader>Crew</SectionHeader>
        <Cast>
-        {personCredits.cast.map((movie) => (
+        {personCredits.crew.map((movie) => (
          <Tile
           key={nanoid()}
           movie={movie}
@@ -91,3 +91,5 @@ export const Person = () => {
    return <>Error</>;
  }
 };
+
+export default Person;

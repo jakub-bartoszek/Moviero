@@ -8,7 +8,7 @@ const moviesSlice = createSlice({
   randomPopularMovie: {},
   similarMovies: [],
   genres: [],
-  totalPages: 1,
+  totalPages: 1
  },
  reducers: {
   fetchPopularMovies: () => {},

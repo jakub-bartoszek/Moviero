@@ -31,7 +31,7 @@ import { nanoid } from "nanoid";
 import { Container } from "../../components/Container/styled";
 import { PersonTile } from "../../components/PersonTile/PersonTile";
 
-export const Movie = () => {
+const Movie = () => {
  const { id } = useParams();
  const dispatch = useDispatch();
  const movie = useSelector(selectMovie);
@@ -74,6 +74,7 @@ export const Movie = () => {
        <Description>{movie.overview}</Description>
       </MovieDetails>
      </Banner>
+
      {movieCredits.cast?.length && (
       <SectionWrapper>
        <SectionHeader>Cast</SectionHeader>
@@ -87,6 +88,7 @@ export const Movie = () => {
        </Cast>
       </SectionWrapper>
      )}
+
      {movieCredits.crew?.length && (
       <SectionWrapper>
        <SectionHeader>Crew</SectionHeader>
@@ -108,3 +110,5 @@ export const Movie = () => {
    return <>Error</>;
  }
 };
+
+export default Movie;

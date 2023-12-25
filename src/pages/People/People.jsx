@@ -6,14 +6,17 @@ import { useDispatch } from "react-redux";
 import { setCategory } from "../../utils/redux/searchSlice";
 import { SearchedPeople } from "./SearchedPeople/SearchedPeople";
 
-export const People = () => {
- const [searchParams, setSearchParams] = useSearchParams();
+const People = () => {
+ const [searchParams] = useSearchParams();
  const dispatch = useDispatch();
 
  useEffect(() => {
   window.scrollTo(0, 0);
-  dispatch(setCategory("person"));
  }, []);
+
+ useEffect(() => {
+  dispatch(setCategory("person"));
+ }, [dispatch]);
 
  return (
   <Container>
@@ -21,3 +24,5 @@ export const People = () => {
   </Container>
  );
 };
+
+export default People;

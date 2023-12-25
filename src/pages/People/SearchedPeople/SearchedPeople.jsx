@@ -28,7 +28,7 @@ export const SearchedPeople = () => {
  useEffect(() => {
   searchParams.set("page", 1);
   setSearchParams(searchParams);
- }, []);
+ }, [searchParams, setSearchParams]);
 
  useEffect(() => {
   if (searchParams.get("page")) {
@@ -43,7 +43,7 @@ export const SearchedPeople = () => {
  }, [searchParams, dispatch]);
 
  switch (status) {
-  case `success`:
+  case "success":
    return (
     <Container ref={containerRef}>
      {searchResults.length && (

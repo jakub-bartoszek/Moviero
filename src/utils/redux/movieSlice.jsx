@@ -21,12 +21,8 @@ const movieSlice = createSlice({
  }
 });
 
-export const {
- fetchMovie,
- setMovie,
- setStatus,
- setMovieCredits
-} = movieSlice.actions;
+export const { fetchMovie, setMovie, setStatus, setMovieCredits } =
+ movieSlice.actions;
 
 export const selectMovie = (state) => state.movie.movie;
 export const selectMovieCredits = (state) => state.movie.movieCredits;
