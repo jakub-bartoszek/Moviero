@@ -11,6 +11,11 @@ export const Movies = () => {
  const dispatch = useDispatch();
 
  useEffect(() => {
+  searchParams.set("page", 1);
+  setSearchParams(searchParams);
+ }, []);
+
+ useEffect(() => {
   window.scrollTo(0, 0);
   dispatch(setCategory("movie"));
  }, []);
