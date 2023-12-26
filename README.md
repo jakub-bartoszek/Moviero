@@ -3,17 +3,11 @@
 
 - [About this app](#about-this-app)
 - [Features](#features)
-- [Things to add](#things-to-add)
 - [Gallery](#gallery)
 - [Build your app](#build-your-app)
 
 ## About this app
 Movie browser that includes, movies, actors and TV shows.
-
-## Things to add
-- Person page
-- Debounced searching
-- Re-styled description of movie
 
 ## Features
 - Popular movies
