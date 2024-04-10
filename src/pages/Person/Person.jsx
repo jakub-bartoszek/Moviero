@@ -21,9 +21,9 @@ import {
  SectionHeader,
  SectionWrapper
 } from "./styled";
-import { Tile } from "../../components/Tile/Tile";
 import { nanoid } from "nanoid";
 import { Loader } from "../../components/Loader/Loader";
+import { MovieTile } from "../../components/MovieTile/MovieTile";
 
 const Person = () => {
  const { id } = useParams();
@@ -46,9 +46,7 @@ const Person = () => {
     <Container>
      <Banner>
       <ImageWrapper>
-       <Image
-        src={`https://image.tmdb.org/t/p/original/${person.profile_path}`}
-       />
+       <Image src={`https://image.tmdb.org/t/p/original/${person.profile_path}`} />
       </ImageWrapper>
       <PersonDetails>
        {person.name && <Name>{person.name}</Name>}
@@ -62,7 +60,7 @@ const Person = () => {
        <SectionHeader>Cast</SectionHeader>
        <Cast>
         {personCredits.cast.map((movie) => (
-         <Tile
+         <MovieTile
           key={nanoid()}
           movie={movie}
          />
@@ -75,7 +73,7 @@ const Person = () => {
        <SectionHeader>Crew</SectionHeader>
        <Cast>
         {personCredits.crew.map((movie) => (
-         <Tile
+         <MovieTile
           key={nanoid()}
           movie={movie}
          />

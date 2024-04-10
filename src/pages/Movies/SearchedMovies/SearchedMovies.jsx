@@ -13,11 +13,11 @@ import {
  selectTotalPages
 } from "../../../utils/redux/moviesSlice";
 import { Pagination } from "../../../components/Pagination/Pagination";
-import { Tile } from "../../../components/Tile/Tile";
 import { Loader } from "../../../components/Loader/Loader";
 import { SearchResultsList, Container } from "./styled";
 import { VerticalSection } from "../../../components/VerticalSection/styled";
 import { SectionHeader } from "../../../components/SectionHeader/styled";
+import { MovieTile } from "../../../components/MovieTile/MovieTile";
 
 export const SearchedMovies = () => {
  const dispatch = useDispatch();
@@ -61,7 +61,7 @@ export const SearchedMovies = () => {
         </SectionHeader>
         <SearchResultsList>
          {searchResults.map((movie) => (
-          <Tile
+          <MovieTile
            genres={genres}
            key={nanoid()}
            movie={movie}

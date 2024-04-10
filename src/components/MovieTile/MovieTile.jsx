@@ -17,7 +17,7 @@ import {
 } from "./styled";
 import { toMovie } from "../../routes";
 
-export const Tile = ({ movie, genres }) => {
+export const MovieTile = ({ movie, genres }) => {
  return (
   <Wrapper>
    {movie && (

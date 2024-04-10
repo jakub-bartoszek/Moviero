@@ -20,7 +20,6 @@ import {
  SimilarMoviesList,
  Container
 } from "./styled";
-import { Tile } from "../../../components/Tile/Tile";
 import { Loader } from "../../../components/Loader/Loader";
 import { Pagination } from "../../../components/Pagination/Pagination";
 import { toMovie } from "../../../routes";
@@ -38,6 +37,7 @@ import {
  selectTotalPages,
  setRandomPopularMovie
 } from "../../../utils/redux/moviesSlice";
+import { MovieTile } from "../../../components/MovieTile/MovieTile";
 
 export const PopularMovies = () => {
  const dispatch = useDispatch();
@@ -48,9 +48,7 @@ export const PopularMovies = () => {
  const genres = useSelector(selectGenres);
  const [currentMovie, setCurrentMovie] = useState(popularMovies[0]);
  const randomPopularMovie = useSelector(selectRandomPopularMovie);
- const movieGenres = genres?.filter((genre) =>
-  currentMovie?.genre_ids.includes(genre.id)
- );
+ const movieGenres = genres?.filter((genre) => currentMovie?.genre_ids.includes(genre.id));
  const [cancel, setCancel] = useState(false);
  const [searchParams, setSearchParams] = useSearchParams();
  const containerRef = useRef(null);
@@ -74,9 +72,7 @@ export const PopularMovies = () => {
 
  useEffect(() => {
   if (popularMovies.length > 0) {
-   dispatch(
-    setRandomPopularMovie(popularMovies[Math.floor(Math.random() * 19)])
-   );
+   dispatch(setRandomPopularMovie(popularMovies[Math.floor(Math.random() * 19)]));
   }
  }, [dispatch, popularMovies]);
 
@@ -89,9 +85,7 @@ export const PopularMovies = () => {
 
  useEffect(() => {
   if (!cancel && currentMovie && Object.keys(currentMovie).length > 0) {
-   dispatch(
-    fetchSimilarMovies({ genreIds: currentMovie.genre_ids.join("%2C") })
-   );
+   dispatch(fetchSimilarMovies({ genreIds: currentMovie.genre_ids.join("%2C") }));
    setCancel(true);
   }
  }, [dispatch, cancel, currentMovie]);
@@ -106,9 +100,7 @@ export const PopularMovies = () => {
        $bgImage={`https://image.tmdb.org/t/p/original/${currentMovie.backdrop_path}`}
       >
        <MovieDetails>
-        <Title to={toMovie({ id: currentMovie.id })}>
-         {currentMovie.title}
-        </Title>
+        <Title to={toMovie({ id: currentMovie.id })}>{currentMovie.title}</Title>
         <Genres>
          {movieGenres.map((genre) => (
           <Genre key={nanoid()}>{genre.name}</Genre>
@@ -152,7 +144,7 @@ export const PopularMovies = () => {
        <SectionHeader>Popular movies</SectionHeader>
        <PopularMoviesList>
         {popularMovies.map((movie) => (
-         <Tile
+         <MovieTile
           genres={genres}
           key={nanoid()}
           movie={movie}
