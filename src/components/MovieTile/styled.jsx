@@ -26,9 +26,7 @@ export const StyledLink = styled(Link)`
  }
 
  &:hover {
-  scale: 102%;
-  box-shadow: 0 10px 50px 0 #00000080;
-  z-index: 1;
+  background-color: ${({ theme }) => theme.colors.tile.hoverBackground};
  }
 `;
 
