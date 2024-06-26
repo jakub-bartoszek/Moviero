@@ -1,4 +1,4 @@
-# Spotify-clone
+# Moviero
 A Spotify-like application where you can listen to music, upload songs and add them to your favourites!
 
 App live here: [jakub-bartoszek.github.io/Moviero](https://jakub-bartoszek.github.io/Moviero)
