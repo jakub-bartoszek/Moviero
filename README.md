@@ -1,5 +1,5 @@
 # Moviero
-A Spotify-like application where you can listen to music, upload songs and add them to your favourites!
+A page for discovering the newest movies where users can search for films and actors.
 
 App live here: [jakub-bartoszek.github.io/Moviero](https://jakub-bartoszek.github.io/Moviero)
 
@@ -15,7 +15,7 @@ App live here: [jakub-bartoszek.github.io/Moviero](https://jakub-bartoszek.githu
 
     ```
     git clone https://github.com/jakub-bartoszek/Moviero.git
-    cd spotify-clone
+    cd moviero
     ```
 2. Install dependencies:
     ```
